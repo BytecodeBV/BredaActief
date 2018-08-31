@@ -9,6 +9,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/bytecodebv/breda-actief/badge)](https://www.codefactor.io/repository/github/bytecodebv/breda-actief)
 [![dependencies Status](https://david-dm.org/bytecodebv/breda-actief/status.svg)](https://david-dm.org/bytecodebv/breda-actief)
 [![devDependencies Status](https://david-dm.org/bytecodebv/breda-actief/dev-status.svg)](https://david-dm.org/bytecodebv/breda-actief?type=dev)
+
 Breda Actief WordPress theme based on Sage.
 
 ## Sage features
