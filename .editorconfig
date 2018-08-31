@@ -1,17 +1,15 @@
-# editorconfig.org
-
 root = true
 
 [*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
 charset = utf-8
-trim_trailing_whitespace = true
+end_of_line = lf
 insert_final_newline = true
-
-[*.php]
+trim_trailing_whitespace = true
+indent_style = space
 indent_size = 4
 
-[resources/views/**.php]
-indent_size = 2
+[makefile]
+indent_style = tab
+
+[*.go]
+indent_style = tab
