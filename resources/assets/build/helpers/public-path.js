@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /* eslint-env browser */
 /* globals SAGE_DIST_PATH */
 

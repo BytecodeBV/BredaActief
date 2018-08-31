@@ -36,14 +36,13 @@ module.exports = {
   },
   "rules": {
     "strict": 1,
-    "indent": ["error", 2],
     "eol-last": 1,
     "no-else-return": 1,
     "max-len": [1, 80, 2],
     "prefer-arrow-callback": 1,
     "prefer-template": 2,
     "prettier/prettier": "error",
-    "indent": [1, 4, {
+    "indent": [1, 2, {
       "SwitchCase": 1,
       "VariableDeclarator": 1
     }],
