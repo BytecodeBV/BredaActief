@@ -21,7 +21,7 @@ install:
 
 script:
   - yarn run test
-  - yurn run build
+  - yarn run build
   - yarn run build:production
 
 cache:
