@@ -1,11 +1,17 @@
-# [Sage](https://roots.io/sage/)
-[![Packagist](https://img.shields.io/packagist/vpre/roots/sage.svg?style=flat-square)](https://packagist.org/packages/roots/sage)
-[![devDependency Status](https://img.shields.io/david/dev/roots/sage.svg?style=flat-square)](https://david-dm.org/roots/sage#info=devDependencies)
-[![Build Status](https://img.shields.io/travis/roots/sage.svg?style=flat-square)](https://travis-ci.org/roots/sage)
+# Breda Actief WordPress Theme
 
-Sage is a WordPress starter theme with a modern development workflow.
+[![Developed by](https://img.shields.io/badge/Developed%20by-Bytecode.nl-green.svg)](https://bytecode.nl)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-## Features
+[![Build Status](https://travis-ci.org/BytecodeBV/breda-actief.svg?branch=master)](https://travis-ci.org/BytecodeBV/breda-actief)
+[![CodeFactor](https://www.codefactor.io/repository/github/bytecodebv/breda-actief/badge)](https://www.codefactor.io/repository/github/bytecodebv/breda-actief)
+[![dependencies Status](https://david-dm.org/bytecodebv/breda-actief/status.svg)](https://david-dm.org/bytecodebv/breda-actief)
+[![devDependencies Status](https://david-dm.org/bytecodebv/breda-actief/dev-status.svg)](https://david-dm.org/bytecodebv/breda-actief?type=dev)
+Breda Actief WordPress theme based on Sage.
+
+## Sage features
 
 * Sass for stylesheets
 * Modern JavaScript
@@ -13,7 +19,7 @@ Sage is a WordPress starter theme with a modern development workflow.
 * [Browsersync](http://www.browsersync.io/) for synchronized browser testing
 * [Blade](https://laravel.com/docs/5.6/blade) as a templating engine
 * [Controller](https://github.com/soberwp/controller) for passing data to Blade templates
-* CSS framework (optional): [Bootstrap 4](https://getbootstrap.com/), [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/), [Tailwind](https://tailwindcss.com/)
+* CSS framework (optional): **[Bootstrap 4](https://getbootstrap.com/)**, [Bulma](https://bulma.io/), [Foundation](https://foundation.zurb.com/), [Tachyons](http://tachyons.io/), [Tailwind](https://tailwindcss.com/)
 
 See a working example at [roots-example-project.com](https://roots-example-project.com/).
 
@@ -26,23 +32,6 @@ Make sure all dependencies have been installed before moving on:
 * [Composer](https://getcomposer.org/download/)
 * [Node.js](http://nodejs.org/) >= 6.9.x
 * [Yarn](https://yarnpkg.com/en/docs/install)
-
-## Theme installation
-
-Install Sage using Composer from your WordPress themes directory (replace `your-theme-name` below with the name of your theme):
-
-```shell
-# @ app/themes/ or wp-content/themes/
-$ composer create-project roots/sage your-theme-name
-```
-
-To install the latest development version of Sage, add `dev-master` to the end of the command:
-
-```shell
-$ composer create-project roots/sage your-theme-name dev-master
-```
-
-During theme installation you will have options to update `style.css` theme headers, select a CSS framework, and configure Browsersync.
 
 ## Theme structure
 
@@ -98,23 +87,3 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 
 * [Sage documentation](https://roots.io/sage/docs/)
 * [Controller documentation](https://github.com/soberwp/controller#usage)
-
-## Contributing
-
-Contributions are welcome from everyone. We have [contributing guidelines](https://github.com/roots/guidelines/blob/master/CONTRIBUTING.md) to help you get started.
-
-## Gold sponsors
-
-Help support our open-source development efforts by [contributing to Sage on OpenCollective](https://opencollective.com/sage).
-
-<a href="https://kinsta.com/?kaid=OFDHAJIXUDIV"><img src="https://roots.io/app/uploads/kinsta.svg" alt="Kinsta" width="200" height="150"></a> <a href="https://k-m.com/"><img src="https://roots.io/app/uploads/km-digital.svg" alt="KM Digital" width="200" height="150"></a>
-
-## Community
-
-Keep track of development and community news.
-
-* Participate on the [Roots Discourse](https://discourse.roots.io/)
-* Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-* Read and subscribe to the [Roots Blog](https://roots.io/blog/)
-* Subscribe to the [Roots Newsletter](https://roots.io/subscribe/)
-* Listen to the [Roots Radio podcast](https://roots.io/podcast/)
