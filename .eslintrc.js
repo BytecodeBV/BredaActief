@@ -1,6 +1,6 @@
 module.exports = {
   "root": true,
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "globals": {
     "wp": true
   },
@@ -22,7 +22,10 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "import"
+    "jquery",
+    "import",
+    "prettier",
+    "react"
   ],
   "settings": {
     "import/core-modules": [],
@@ -32,16 +35,19 @@ module.exports = {
     ]
   },
   "rules": {
-    "no-console": 0,
-    "comma-dangle": [
-      "error",
-      {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "ignore"
-      }
-    ]
+    "strict": 1,
+    "indent": ["error", 2],
+    "eol-last": 1,
+    "no-else-return": 1,
+    "max-len": [1, 80, 2],
+    "prefer-arrow-callback": 1,
+    "prefer-template": 2,
+    "prettier/prettier": "error",
+    "indent": [1, 4, {
+      "SwitchCase": 1,
+      "VariableDeclarator": 1
+    }],
+    "no-loop-func": 0,
+    "no-nested-ternary": 1
   }
 }
