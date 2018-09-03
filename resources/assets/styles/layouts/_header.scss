@@ -1,7 +1,29 @@
-.banner .nav li {
-  @extend .nav-item;
+.nav-top {
+  background: $color-blue;
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  &__item {
+    color: $color-white;
+
+    &-read {
+      &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url('../../assets/images/icon_read.svg') no-repeat;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
 }
 
-.banner .nav a {
-  @extend .nav-link;
-}
