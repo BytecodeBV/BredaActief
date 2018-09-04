@@ -1,4 +1,5 @@
 @import "common/variables";
+@import "mixins/mixins";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -13,6 +14,7 @@
 
 /** Import theme styles */
 @import "common/global";
+@import "common/typography";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";

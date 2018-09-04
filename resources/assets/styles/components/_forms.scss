@@ -11,9 +11,27 @@
 
 .search-form .search-field {
   @extend .form-control;
+
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  border-radius: 15px;
+  margin: 0 10px 0 40px;
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  @include placeholder {
+    color: $color-primary;
+  }
 }
 
 .search-form .search-submit {
   @extend .btn;
   @extend .btn-secondary;
+
+  background: url('../../../assets/images/icon_loop.svg') no-repeat;
+  width: 24px;
+  height: 24px;
+  border: none;
 }

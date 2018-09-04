@@ -1,0 +1,12 @@
+body {
+  font-family: $sans-serif;
+  font-size: 16px;
+}
+
+.nav-primary {
+  li {
+    @include fontSize(18.54px);
+
+    font-family: $serif;
+  }
+}
