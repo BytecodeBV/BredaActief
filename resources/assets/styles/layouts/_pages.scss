@@ -1,0 +1,21 @@
+.home {
+  .intro {
+    //margin: -160px auto;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+
+    .container {
+      max-width: 980px;
+      width: 100%;
+    }
+  }
+}
+
+.banner__visual-figure {
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
