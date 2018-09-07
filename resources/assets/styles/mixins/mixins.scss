@@ -1,17 +1,6 @@
-@function calculaterem($size) {
-  $remSize: $size / 16px;
-
-  @return #{$remSize}rem;
-}
-
-@mixin fontSize($size) {
-  font-size: $size; //Fallback in px
-  font-size: calculaterem($size);
-}
-
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
+@mixin title {
+  font-family: $serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $color-blue;
 }

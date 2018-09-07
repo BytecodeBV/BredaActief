@@ -1,6 +1,8 @@
 .home {
   .intro {
-    //margin: -160px auto;
+    color: $color-blue;
+    margin: -160px auto 0;
+    padding: 140px 0;
     background: #fff;
     position: relative;
     z-index: 2;
@@ -9,10 +11,16 @@
       max-width: 980px;
       width: 100%;
     }
+
+    .intro__article--content {
+      font-size: 3.1rem;
+      line-height: 1.32;
+      font-weight: normal;
+    }
   }
 }
 
-.banner__visual-figure {
+.banner__visual--figure {
   img {
     width: 100%;
     height: auto;
