@@ -20,27 +20,6 @@
 		</div>
 		</div>
 	</section>
-	
-	<style>
-		.intro {
-			position: relative;
-			width: 100%;
-			margin: 0 auto;
-			overflow: hidden;
-			padding: 20px;
-			text-align: center;
-		}
-		.intro:after {
-			content: '';
-			position: absolute;
-			width: 1100%; height: 1100%;
-			top: 20px; left: -500%;
-			background: rgba(255,255,255,.8);
-			transform-origin: 54% 0;
-			transform: rotate(45deg);
-			z-index: -1;
-		}
-	</style>
 	<section class="featured">
 		<div class="container">
 			
