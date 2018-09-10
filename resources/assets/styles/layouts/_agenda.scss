@@ -1,0 +1,41 @@
+.agenda__event {
+  position: relative;
+  font-family: $serif;
+  font-size: 3.508rem;
+  color: $color-white;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 290px;
+  height: 290px;
+}
+
+.agenda__event--img {
+  img {
+    @include image;
+  }
+}
+
+.agenda__event-text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.agenda__event--date {
+  display: block;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #ee87af;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.agenda__event--title {
+  @include title;
+
+  font-family: $serif;
+  font-size: 3.508rem;
+  color: $color-white;
+}
