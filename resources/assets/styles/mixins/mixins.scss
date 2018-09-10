@@ -4,3 +4,9 @@
   font-weight: bold;
   color: $color-blue;
 }
+
+@mixin image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
