@@ -111,8 +111,10 @@
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+  display: block;
+  margin: 0;
 
-  &::after {
+  &::before {
     content: '';
     display: block;
     width: 100%;
@@ -124,6 +126,7 @@
     background: url('../../../assets/images/header_overlay.png') no-repeat left top;
     background-size: contain;
   }
+
 
   &--title {
     @include title;
