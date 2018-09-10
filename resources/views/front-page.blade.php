@@ -22,7 +22,6 @@
 	</section>
 	<section class="featured">
 		<div class="container">
-			
 			<article class="featured__item">
 				<figure class="featured__figure">
 					<img alt="" src="http://placehold.it/640x640">
@@ -113,6 +112,59 @@
 			<figure class="banner__visual--figure">
 				<img alt="" src="http://placehold.it/1400x520">
 			</figure>
+		</div>
+	</section>
+	
+	<section class="agenda">
+		<div class="container slider">
+			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event-text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</div>
+			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<div class="agenda__event-text">
+					<span class="agenda__event--date">24/05</span>
+					<h3>Voetbal<br />Tournooi</h3>
+					<p>Sportvelden - Breda</p>
+				</div>
+			</div>
+			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<div class="agenda__event-text">
+					<span class="agenda__event--date">24/05</span>
+					<h3>Voetbal<br />Tournooi</h3>
+					<p>Sportvelden - Breda</p>
+				</div>
+			</div>
+			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<div class="agenda__event-text">
+					<span class="agenda__event--date">24/05</span>
+					<h3>Voetbal<br />Tournooi</h3>
+					<p>Sportvelden - Breda</p>
+				</div>
+			</div>			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<div class="agenda__event-text">
+					<span class="agenda__event--date">24/05</span>
+					<h3>Voetbal<br />Tournooi</h3>
+					<p>Sportvelden - Breda</p>
+				</div>
+			</div>
+			<div class="agenda__event">
+				<figure class="agenda__event--img"><img src="http://placehold.it/600x600" alt=""></figure>
+				<div class="agenda__event-text">
+					<span class="agenda__event--date">24/05</span>
+					<h3>Voetbal<br />Tournooi</h3>
+					<p>Sportvelden - Breda</p>
+				</div>
+			</div>
+			
 		</div>
 	</section>
 	@endwhile
