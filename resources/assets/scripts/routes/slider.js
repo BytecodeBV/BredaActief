@@ -2,11 +2,12 @@ import $ from 'jquery';
 import 'slick-carousel';
 
 $('.slider').slick({
-  dots: true,
+  dots: false,
   infinite: false,
   speed: 300,
   slidesToShow: 4,
   slidesToScroll: 4,
+  variableWidth: true,
   responsive: [
     {
       breakpoint: 1024,
@@ -14,7 +15,6 @@ $('.slider').slick({
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
       },
     },
     {
