@@ -1,0 +1,67 @@
+.contact {
+  position: relative;
+
+  * {
+    color: $blue;
+  }
+
+  &__col--left {
+    width: 100%;
+    padding: 100px 600px 100px 0;
+  }
+
+  &__col--right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__article {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: 70px;
+  }
+
+  &__header--title {
+    @include title;
+
+    margin: 0;
+  }
+
+  &__header--subtitle {
+    font-size: 3.1rem;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  .field-wrapper {
+    text-align: left;
+    flex: 0 0 295px;
+    margin: 0 20px 40px;
+  }
+
+  .field-textarea {
+    flex: 0 0 630px;
+
+    textarea {
+      height: 150px;
+    }
+  }
+}
