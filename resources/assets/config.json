@@ -8,8 +8,8 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/wp-content/themes/breda-actief",
-  "devUrl": "bredaactief.local",
+  "publicPath": "/wp-content/themes/Breda-Actief",
+  "devUrl": "http://bredaactief.local",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

@@ -10,3 +10,12 @@
   height: auto;
   display: block;
 }
+
+@mixin link {
+  font-family: $sans-serif;
+  font-size: 3.1rem;
+  color: $blue;
+  text-decoration: underline;
+}
+
+

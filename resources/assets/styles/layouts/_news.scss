@@ -1,7 +1,18 @@
 .news {
+  position: relative;
   padding: 90px 0;
-  background: pink;
-  background: red;
+  background: $blue;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 238px;
+    height: 238px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../../../assets/images/news_corner.png");
+  }
 
   .container {
     position: relative;
@@ -9,6 +20,10 @@
 
   * {
     color: $white;
+  }
+
+  &__header {
+    margin-left: 80px;
   }
 
   &__item-wrapper {
@@ -49,11 +64,12 @@
     margin-bottom: 40px;
     color: $white;
     font-weight: bold;
+    text-transform: none;
   }
 
   &__item--intro {
-    font-size: 1.529rem;
-    line-height: 1.2;
+    font-size: 1.8rem;
+    line-height: 1.3;
   }
 
   .show__all {
