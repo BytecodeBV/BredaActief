@@ -6,12 +6,12 @@
     display: block;
     background: url('../../../assets/images/nav_shadow.png') no-repeat left center;
     background-size: contain;
-    width: 100%;
+    width: 300px;
     height: 228px;
     position: absolute;
     top: 62px;
     left: -1px;
-    z-index: 10;
+    z-index: 12;
   }
 
   nav {
@@ -35,12 +35,12 @@
 
 .nav-top {
   padding: 15px 0;
-  background: $color-blue;
+  background: $blue;
   position: relative;
-  z-index: 10;
+  z-index: 15;
 
   &__item {
-    color: $color-white;
+    color: $white;
     position: relative;
     padding: 0 0 0 40px;
 
@@ -84,11 +84,11 @@
   -moz-box-shadow: 0px 7px 80px 10px rgba(0,0,0,0.57);
   box-shadow: 0px 7px 80px 10px rgba(0,0,0,0.57);
   position: relative;
-  z-index: 5;
+  z-index: 11;
 
   a {
     &:hover {
-      color: $color-blue;
+      color: $blue;
     }
   }
 
@@ -100,8 +100,10 @@
   }
 
   .menu-item {
-    color: $color-blue;
+    color: $blue;
     text-transform: uppercase;
+    font-family: $serif;
+    font-size: 1.854rem;
   }
 }
 
@@ -134,7 +136,7 @@
 
       font-size: 11.76rem;
       line-height: 1;
-      color: $color-white;
+      color: $white;
       position: absolute;
       left: 60px;
       bottom: 240px;
