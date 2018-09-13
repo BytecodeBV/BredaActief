@@ -6,12 +6,34 @@
     display: block;
     background: url('../../../assets/images/nav_shadow.png') no-repeat left center;
     background-size: contain;
-    width: 300px;
-    height: 228px;
+    width: 195px;
+    height: 286px;
     position: absolute;
-    top: 62px;
-    left: -1px;
+    top: 60px;
+    left: 0px;
     z-index: 12;
+  }
+
+  .logo {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    z-index: 13;
+    display: block;
+
+    svg {
+      display: block;
+      width: 90px;
+      height: 80px;
+
+      .cls-1 {
+        fill: $red;
+      }
+
+      .cls-2 {
+        fill: $blue;
+      }
+    }
   }
 
   nav {
