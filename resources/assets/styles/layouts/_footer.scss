@@ -1,0 +1,58 @@
+.footer {
+  padding: 100px 0;
+  background: $red;
+
+  * {
+    color: $white;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h5 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  &__col {
+    flex: 0 1 280px;
+    font-size: 2.45rem;
+    line-height: 1.5;
+  }
+
+  &__col-last {
+    p {
+      font-weight: bold;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .social {
+    margin-top: 20px;
+
+    li {
+      display: inline-block;
+      padding: 0 5px 0 0;
+
+      a {
+        display: block;
+      }
+    }
+    svg {
+      display: block;
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
