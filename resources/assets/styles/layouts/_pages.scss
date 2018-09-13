@@ -1,6 +1,6 @@
 .home {
   .intro {
-    color: $color-blue;
+    color: $blue;
     margin: -170px auto 0;
     padding: 140px 0;
     background: #fff;
@@ -12,6 +12,12 @@
       width: 100%;
     }
 
+    .intro__article--header {
+      h2 {
+
+      }
+    }
+
     .intro__article--content {
       font-size: 3.1rem;
       line-height: 1.32;
@@ -21,6 +27,8 @@
 }
 
 .banner__visual--figure {
+  margin-bottom: 65px;
+
   img {
     width: 100%;
     height: auto;
