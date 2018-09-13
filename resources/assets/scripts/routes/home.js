@@ -8,7 +8,7 @@ export default {
       dots: false,
       infinite: true,
       speed: 300,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 1,
       centerMode: true,
       responsive: [
