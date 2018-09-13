@@ -86,6 +86,7 @@
     background-repeat: no-repeat;
     border: none;
     text-indent: -9999px;
+    background-color: $white;
 
     &:focus {
       box-shadow: none;
@@ -105,12 +106,10 @@
 }
 
 .show__all {
-  font-family: $sans-serif;
-  font-size: 3.1rem;
   position: absolute;
   right: 15px;
   bottom: -60px;
-  color: $blue;
-  text-decoration: underline;
+
+  @include link;
 }
 
