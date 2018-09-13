@@ -117,61 +117,130 @@
 	</section>
 	
 	<section class="agenda">
-		<div class="container">
-			<header class="agenda__header"><h2><?php echo __('Agenda', $text_domain); ?></h2></header>
-			<div class="slider">
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event--text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event-text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event-text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event-text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event-text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
-				<div class="agenda__event">
-					<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-					<span class="agenda__event--date">24/05</span>
-					<div class="agenda__event-text">
-						<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-						<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-					</div>
-				</div>
+		<header class="agenda__header">
+			<div class="container">
+				<h2><?php echo __('Agenda', $text_domain); ?></h2>
 			</div>
+		</header>
+		<div class="slider">
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+			<article class="agenda__event">
+				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
+				<span class="agenda__event--date">24/05</span>
+				<div class="agenda__event--text">
+					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
+					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+				</div>
+			</article>
+		</div>
+		<a class="show__all" href="#">Bekijk alles ></a>
+	</section>
+	
+	<section class="news">
+		<div class="container small">
+			<header class="news__header">
+				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
+			</header>
+			<div class="news__item-wrapper">
+				<article class="news__item">
+					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+					<div class="news__item--text">
+						<h3 class="news__item--title">Sportdag groot succes!</h3>
+						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
+					</div>
+				</article>
+				<article class="news__item">
+					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+					<div class="news__item--text">
+						<h3 class="news__item--title">Sportdag groot succes!</h3>
+						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
+					</div>
+				</article>
+				<article class="news__item">
+					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+					<div class="news__item--text">
+						<h3 class="news__item--title">Sportdag groot succes!</h3>
+						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
+					</div>
+				</article>
+				<article class="news__item">
+					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+					<div class="news__item--text">
+						<h3 class="news__item--title">Sportdag groot succes!</h3>
+						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
+					</div>
+				</article>
+			</div>
+			<a class="show__all" href="#">Bekijk alles ></a>
+		</div>
+	</section>
+	<section class="contact">
+		<div class="contact__col--left">
+			<article class="contact__article">
+				<header class="contact__header">
+					<h2 class="contact__header--title">Vragen</h2>
+					<p class="contact__header--subtitle">Neem contact met ons op</p>
+				</header>
+				<form action="#">
+					<div class="field-wrapper">
+						<label for="">Naam</label>
+						<input type="text" name="name">
+					</div>
+					<div class="field-wrapper">
+						<label for="">E-mail</label>
+						<input type="email" name="email">
+					</div>
+					<div class="field-wrapper field-textarea">
+						<label for="">Hoe kunnen we je helpen</label>
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+					</div>
+					<div class="field-wrapper">
+						<input type="submit" value="versturen >">
+					</div>
+				</form>
+			</article>
+		</div>
+		<div class="contact__col--right" style="background-image:url('http://placehold.it/600x750');">
 		</div>
 	</section>
 	@endwhile
 @endsection
-
-
