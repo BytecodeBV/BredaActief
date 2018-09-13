@@ -176,7 +176,7 @@
 	</section>
 	
 	<section class="news">
-		<div class="container small">
+		<div class="container">
 			<header class="news__header">
 				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
 			</header>
@@ -233,7 +233,7 @@
 						<label for="">Hoe kunnen we je helpen</label>
 						<textarea name="" id="" cols="30" rows="10"></textarea>
 					</div>
-					<div class="field-wrapper">
+					<div class="field-wrapper field-submit">
 						<input type="submit" value="versturen >">
 					</div>
 				</form>

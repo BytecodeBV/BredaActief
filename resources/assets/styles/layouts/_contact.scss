@@ -7,14 +7,14 @@
 
   &__col--left {
     width: 100%;
-    padding: 100px 600px 100px 0;
+    padding: 100px 42.8% 100px 0;
   }
 
   &__col--right {
     position: absolute;
     top: 0;
     right: 0;
-    width: 600px;
+    width: 42.8%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -23,8 +23,10 @@
 
   &__article {
     width: 90%;
+    max-width: 960px;
     text-align: center;
     margin: 0 auto;
+
   }
 
   &__header {
@@ -57,11 +59,20 @@
     margin: 0 20px 40px;
   }
 
-  .field-textarea {
+  .field-textarea,
+  .field-submit {
     flex: 0 0 630px;
+  }
 
+  .field-textarea {
     textarea {
       height: 150px;
+    }
+  }
+
+  .field-submit {
+    input[type="submit"] {
+      padding: 0;
     }
   }
 }
