@@ -9,7 +9,7 @@
 		</div>
 	</figure>
 	<section class="intro">
-		<div class="container">
+		<div class="center">
 			<article id="post-&lt;?php the_ID(); ?&gt;">
 				<header class="intro__article--header">
 					<h2>Aan de slag</h2>
@@ -19,10 +19,9 @@
 				</div>
 			</article>
 		</div>
-		</div>
 	</section>
 	<section class="featured">
-		<div class="container">
+		<div class="center">
 			<article class="featured__item">
 				<figure class="featured__figure">
 					<img alt="" src="http://placehold.it/640x640">
@@ -109,7 +108,7 @@
 		</div>
 	</section>
 	<section class="banner__visual">
-		<div class="container">
+		<div class="center">
 			<figure class="banner__visual--figure">
 				<img alt="" src="http://placehold.it/1400x520">
 			</figure>
@@ -118,7 +117,7 @@
 	
 	<section class="agenda">
 		<header class="agenda__header">
-			<div class="container">
+			<div class="center">
 				<h2><?php echo __('Agenda', $text_domain); ?></h2>
 			</div>
 		</header>
@@ -176,7 +175,7 @@
 	</section>
 	
 	<section class="news">
-		<div class="container">
+		<div class="center">
 			<header class="news__header">
 				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
 			</header>
@@ -221,19 +220,21 @@
 					<p class="contact__header--subtitle">Neem contact met ons op</p>
 				</header>
 				<form action="#">
-					<div class="field-wrapper">
-						<label for="">Naam</label>
-						<input type="text" name="name">
-					</div>
-					<div class="field-wrapper">
-						<label for="">E-mail</label>
-						<input type="email" name="email">
+					<div class="group">
+						<div class="field-wrapper left">
+							<label for="">Naam</label>
+							<input type="text" name="name">
+						</div>
+						<div class="field-wrapper right">
+							<label for="">E-mail</label>
+							<input type="email" name="email">
+						</div>
 					</div>
 					<div class="field-wrapper field-textarea">
 						<label for="">Hoe kunnen we je helpen</label>
 						<textarea name="" id="" cols="30" rows="10"></textarea>
 					</div>
-					<div class="field-wrapper field-submit">
+					<div class="field-wrapper field-submit group">
 						<input type="submit" value="versturen >">
 					</div>
 				</form>

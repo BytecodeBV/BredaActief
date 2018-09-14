@@ -1,3 +1,20 @@
+//sticky footer
+.content {
+  @include for-tablet-landscape-up {
+    min-height: calc(100vh - 468px);
+  }
+}
+
+.footer {
+  height: auto;
+
+  @include for-tablet-landscape-up {
+    height: 468px;
+  }
+}
+
+// end sticky footer
+
 .footer {
   padding: 100px 0;
   background: $red;
@@ -6,10 +23,18 @@
     color: $white;
   }
 
-  .container {
+  .center {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   h5 {
@@ -24,13 +49,27 @@
 
   &__col {
     flex: 0 1 280px;
+    align-items: flex-start;
+    flex-basis: auto;
     font-size: 2.45rem;
     line-height: 1.5;
+    margin-bottom: 40px;
+
+    @include for-tablet-landscape-up {
+      flex: 0 1 280px;
+    }
+
+    h5 {
+        font-size: 2.45rem;
+    }
   }
 
   &__col-last {
+    margin-bottom: 0;
+
     p {
       font-weight: bold;
+      margin-bottom: 0;
 
       a {
         text-decoration: underline;
@@ -49,10 +88,22 @@
         display: block;
       }
     }
+
     svg {
       display: block;
-      width: 45px;
-      height: 45px;
+      width: 36px;
+      height: 36px;
+
+
+      @include for-desktop-up {
+        width: 40px;
+        height: 40px;
+      }
+
+      @include for-medium-desktop-up {
+        width: 45px;
+        height: 45px;
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 <?php global $text_domain; ?>
 <header class="banner" role="banner">
   <nav class="nav-top" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', $text_domain ); ?>">
-    <div class="container">
+    <div class="center">
       <ul class="nav-top__menu">
         <li class="nav-top__item nav-top__item-read">
           <a href=""><?php echo __('Lees voor', $text_domain); ?></a>
@@ -16,7 +16,7 @@
     </div>
   </nav>
   <nav class="nav-primary" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', $text_domain ); ?>">
-    <div class="container">
+    <div class="center">
       <?php
         $args = array(
             'theme_location' => 'primary_navigation'

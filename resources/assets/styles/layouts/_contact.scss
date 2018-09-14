@@ -6,19 +6,30 @@
   }
 
   &__col--left {
-    width: 100%;
-    padding: 100px 42.8% 100px 0;
+    @include for-tablet-landscape-up {
+      width: 100%;
+      padding: 100px 42.8% 100px 0;
+    }
   }
 
   &__col--right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 42.8%;
-    height: 100%;
+    min-height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+
+    @include for-tablet-portrait-up {
+      min-height: 600px;
+    }
+
+    @include for-tablet-landscape-up {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42.8%;
+      height: 100%;
+      min-height: auto;
+    }
   }
 
   &__article {
@@ -26,7 +37,7 @@
     max-width: 960px;
     text-align: center;
     margin: 0 auto;
-
+    padding: 60px 0;
   }
 
   &__header {
@@ -44,9 +55,8 @@
   }
 
   form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    max-width: 640px;
+    margin: 0 auto;
   }
 
   label {
@@ -55,13 +65,31 @@
 
   .field-wrapper {
     text-align: left;
-    flex: 0 0 295px;
-    margin: 0 20px 40px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @include for-tablet-landscape-up {
+      margin-bottom: 20px;
+    }
   }
+
+  .group {
+    .field-wrapper {
+      width: 100%;
+
+      @include for-tablet-landscape-up {
+        width: 48.5%;
+      }
+    }
+  }
+
+
 
   .field-textarea,
   .field-submit {
-    flex: 0 0 630px;
+
+
+
   }
 
   .field-textarea {

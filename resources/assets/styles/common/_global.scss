@@ -1,19 +1,41 @@
-html {
-  font-size: 62.5%;
-}
 
-.container {
+
+.center {
   max-width: 1400px;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+
+  @include for-tablet-landscape-up {
+    width: 94%;
+  }
+
+  @include for-medium-desktop-up {
+    width: 100%;
+  }
 
   &.small {
     max-width: 1200px;
   }
 }
 
+.group {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
 
 li {
   a {
     color: inherit;
   }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }

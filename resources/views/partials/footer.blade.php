@@ -1,5 +1,5 @@
 <footer class="footer">
-  <div class="container">
+  <div class="center">
     <div class="footer__col">
       <h5>Sport en bewegen</h5>
       <nav class="footer__nav">
