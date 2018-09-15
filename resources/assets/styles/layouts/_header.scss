@@ -11,8 +11,24 @@
       height: 286px;
       position: absolute;
       top: 60px;
-      left: 0px;
+      left: 0;
       z-index: 12;
+    }
+
+    @include for-tablet-landscape-up {
+      top: 50px;
+    }
+
+    @include for-desktop-up {
+      top: 56px;
+    }
+
+    @include for-medium-desktop-up {
+      top: 65px;
+    }
+
+    @include for-big-desktop-up {
+      top: 66px;
     }
   }
 
@@ -20,7 +36,7 @@
     position: absolute;
     z-index: 13;
     display: block;
-    bottom: 8px;
+    bottom: 4px;
     left: 10px;
 
     @include for-tablet-landscape-up {
@@ -68,15 +84,29 @@
 }
 
 .nav-top {
-  padding: 15px 0;
   background: $blue;
   position: relative;
   z-index: 15;
+  padding: 20px 0;
+
+  @include for-phone-only {
+    height: 60px;
+    padding: 16px 0;
+  }
 
   &__item {
     color: $white;
     position: relative;
     padding: 0 0 0 40px;
+
+    @include for-phone-only {
+      margin: 0;
+      padding: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &::before {
       content: '';
@@ -86,28 +116,47 @@
       position: absolute;
       left: 0;
       top: calc(50% - 14px);
+
+      @include for-phone-only {
+        position: static;
+      }
     }
 
     &-read {
       &::before {
+        top: calc(50% - 12px);
         background: url('../../../assets/images/icon_read.svg') no-repeat;
       }
     }
 
     &-contrast {
+      @include for-phone-only {
+        margin-right: 24px !important;
+        margin-top: -2px;
+      }
       &::before {
         background: url('../../../assets/images/icon_contrast.svg') no-repeat;
       }
     }
 
     &-font {
+      @include for-phone-only {
+        margin-top: 2px;
+      }
+
       &::before {
+        top: calc(50% - 11px);
         background: url('../../../assets/images/icon_fontsize.svg') no-repeat;
       }
     }
 
     a {
       color: inherit;
+      display: block;
+
+      @include for-phone-only {
+        text-indent: -9999px;
+      }
     }
   }
 }
@@ -142,13 +191,34 @@
 }
 
 .header-visual {
-  height: 950px;
+  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
   display: block;
   margin: 0;
+
+  @include for-tablet-portrait-up {
+    height: 400px;
+  }
+
+  @include for-tablet-landscape-up {
+    height: 600px;
+  }
+
+  @include for-desktop-up {
+    height: 800px;
+  }
+
+  @include for-medium-desktop-up {
+    height: 900px;
+  }
+
+  @include for-big-desktop-up {
+    height: 1000px;
+  }
+
 
   &::before {
       content: '';
@@ -179,25 +249,31 @@
   &--title {
     h1 {
       @include title;
-      font-size: 4.76rem;
+
+      font-size: 2.76rem;
       line-height: 1;
       color: $white;
       position: absolute;
-      left: 20px;
-      bottom: 240px;
       z-index: 5;
       margin: 0;
+      left: 5%;
+      bottom: 40%;
 
       @include for-tablet-portrait-up {
         font-size: 6.76rem;
       }
 
+
       @include for-tablet-landscape-up {
+        bottom: 30%;
         font-size: 8.76rem;
-        left: 60px;
       }
 
       @include for-desktop-up {
+        font-size: 10.76rem;
+      }
+
+      @include for-medium-desktop-up {
         font-size: 11.76rem;
       }
     }

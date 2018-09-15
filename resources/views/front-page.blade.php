@@ -27,9 +27,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p
 				</div>
 			</article>
 			<article class="featured__item">
@@ -37,9 +36,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			<article class="featured__item">
@@ -47,9 +45,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			<article class="featured__item">
@@ -57,9 +54,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			
@@ -69,9 +65,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			<article class="featured__item">
@@ -79,9 +74,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			<article class="featured__item">
@@ -89,9 +83,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport dit is een langere titel</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport dit is een langere titel</span> </h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 			<article class="featured__item">
@@ -99,9 +92,8 @@
 					<img alt="" src="http://placehold.it/640x640">
 				</figure>
 				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title">Ik zoek een sport</h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils</p>
-					<a class="featured__content--link" href="#">Lees meer ></a>
+					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
+					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
 				</div>
 			</article>
 		
