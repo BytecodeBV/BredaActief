@@ -4515,6 +4515,10 @@ jpegtran-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
+jquery.mmenu@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/jquery.mmenu/-/jquery.mmenu-7.1.0.tgz#8c3113ac0a900e285c4f18fe426277f23dd9c3fc"
+
 jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
