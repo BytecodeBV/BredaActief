@@ -36,38 +36,6 @@ input[type="submit"] {
   box-shadow: none;
 }
 
-.search-form {
-  position: relative;
-  padding-right: 20px;
-
-  label {
-    font-weight: normal;
-  }
-
-  .search-field {
-    border: 1px solid $blue;
-    color: $blue;
-    border-radius: $border-radius;
-    margin: 0 10px 0 40px;
-    padding: 5px 15px;
-
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  .search-submit {
-    background: url('../../../assets/images/icon_loop.svg') no-repeat;
-    width: 24px;
-    height: 24px;
-    border: none;
-    position: absolute;
-    top: calc(50% - 12px);
-    right: 0;
-  }
-}
-
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: $blue;
 }
@@ -87,6 +55,89 @@ input[type="submit"] {
   }
 }
 
+.search-form {
+  position: relative;
+  padding-right: 20px;
+
+  @include for-phone-only {
+    position: absolute;
+    bottom: -51px;
+    width: 100%;
+    background: $red;
+    padding: 10px 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s linear;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  label {
+    font-weight: normal;
+  }
+
+  &__inner {
+    @include for-phone-only {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      left: -2%;
+    }
+  }
+
+  .search-field {
+    border: 1px solid $blue;
+    color: $blue;
+    border-radius: $border-radius;
+    margin: 0 10px 0 40px;
+    padding: 5px 15px;
+
+    @include for-phone-only {
+      border-color: $red;
+      margin: 0;
+      width: 100%;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .search-submit {
+    background: url('../../../assets/images/icon_loop.svg') no-repeat;
+    width: 24px;
+    height: 24px;
+    border: none;
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 0;
+
+    @include for-phone-only {
+      right: 20px;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.search-toggle {
+  display: none;
+  
+  @include for-phone-only {
+    display: block;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+}
 
 
 

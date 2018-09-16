@@ -36,7 +36,7 @@
     position: absolute;
     z-index: 13;
     display: block;
-    bottom: 4px;
+    bottom: 6px;
     left: 10px;
 
     @include for-tablet-landscape-up {
@@ -46,8 +46,8 @@
 
     svg {
       display: block;
-      width: 60px;
-      height: 53px;
+      width: 55px;
+      height: 49px;
 
       @include for-tablet-landscape-up {
         width: 90px;
@@ -88,6 +88,7 @@
   position: relative;
   z-index: 15;
   padding: 20px 0;
+  font-size: 1.8rem;
 
   @include for-phone-only {
     height: 60px;

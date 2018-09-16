@@ -163,7 +163,9 @@
 				</div>
 			</article>
 		</div>
-		<a class="show__all" href="#">Bekijk alles ></a>
+		<div class="center">
+			<a class="show__all" href="#">Bekijk alles ></a>
+		</div>
 	</section>
 	
 	<section class="news">

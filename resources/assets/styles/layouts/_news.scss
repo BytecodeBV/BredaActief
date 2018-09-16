@@ -72,8 +72,6 @@
 
       @include image;
     }
-
-
   }
 
   &__item--text {
@@ -111,6 +109,10 @@
   }
 
   .show__all {
+    @include link;
+
+    position: absolute;
+    right: 0;
     bottom: -20px;
     color: $white;
   }

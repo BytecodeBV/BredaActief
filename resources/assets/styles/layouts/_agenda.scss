@@ -1,6 +1,16 @@
 .agenda {
+  position: relative;
+
   .center {
     position: relative;
+
+    .show__all {
+      @include link;
+
+      position: absolute;
+      right: 0;
+      bottom: 60px;
+    }
   }
 }
 
@@ -106,11 +116,4 @@
   }
 }
 
-.show__all {
-  position: absolute;
-  right: 15px;
-  bottom: -60px;
-
-  @include link;
-}
 

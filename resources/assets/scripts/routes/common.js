@@ -30,5 +30,11 @@ export default {
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
+
+    $('.search-toggle').click(function(e){
+      e.preventDefault();
+
+      $('.search-form').toggleClass('open');
+    });
   },
 };
