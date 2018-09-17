@@ -1,111 +1,75 @@
-<?php global $text_domain; ?>
+<?php
+global $text_domain;
+$page_id = get_the_ID();
+$feat_pages = get_field('feat_blocks');
+$banner_visual = get_field('banner_visual');
+?>
+
 @extends('layouts.app')
 
 @section('content')
+	
+	@include('partials.header-visual');
+	
 	@while(have_posts()) @php the_post() @endphp
-	<figure class="header-visual" style="background-image: url('http://placehold.it/1400x950');">
-		<div class="header-visual--title">
-			<h1>Iedereen <br />in beweging</h1>
-		</div>
-	</figure>
 	<section class="intro">
 		<div class="center">
-			<article id="post-&lt;?php the_ID(); ?&gt;">
+			<article id="post-{{ get_the_ID() }}">
 				<header class="intro__article--header">
-					<h2>Aan de slag</h2>
+					<h2>{{ the_title() }}</h2>
 				</header>
 				<div class="intro__article--content">
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elisequat, vel illum dolore eu feugiat nulla facilisis at vero eros et Lorem ipsum dolor sit amet, consectetuer adipiscing elisequat, vel illum dolore eu feugiat eros et accumsan et iusto odio...</p>
+					{{ the_content() }}
 				</div>
 			</article>
 		</div>
 	</section>
-	<section class="featured">
-		<div class="center">
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			
-			
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport dit is een langere titel</span> </h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-			<article class="featured__item">
-				<figure class="featured__figure">
-					<img alt="" src="http://placehold.it/640x640">
-				</figure>
-				<div class="featured__content--wrapper">
-					<h2 class="featured__content--title"><span class="featured__content--inner">Ik zoek een sport</span></h2>
-					<p class="featured__content--intro">Je kunt op allerlei manieren sporten en bewegen via Breda Actief. We hebben voor ieder wat wils <a class="featured__content--link" href="#">Lees meer ></a></p>
-				</div>
-			</article>
-		
-		</div>
-	</section>
+	@endwhile
+	
+	@if(have_rows('feat_blocks'))
+		<section class="featured">
+			<div class="center">
+				@while (have_rows('feat_blocks')) @php(the_row())
+					<?php
+					$block_color = get_sub_field('block_color');
+					$post_object = get_sub_field('block');
+					?>
+					@if( $post_object )
+						<?php
+						// override $post
+						$post = $post_object;
+						setup_postdata( $post );
+						
+						$trimmed = wp_trim_words( get_the_content(), 17, '...' );
+						?>
+						<article class="featured__item" style="background: {{ $block_color }}">
+							<figure class="featured__figure">
+								@if ( has_post_thumbnail( $post->ID ))
+									{!! get_the_post_thumbnail($post->ID, 'image-feat' ) !!}
+								@endif
+							</figure>
+							<div class="featured__content--wrapper">
+								<h2 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h2>
+								<p class="featured__content--intro">{{ $trimmed }} <a class="featured__content--link" href="{{ get_the_permalink($post->ID) }}"><?php echo __('Lees meer >', $text_domain); ?></a></p>
+							</div>
+						</article>
+						<?php wp_reset_postdata(); ?>
+					@endif
+				@endwhile
+			</div>
+		</section>
+	@endif
+	
+	
+	@if( $banner_visual )
 	<section class="banner__visual">
 		<div class="center">
 			<figure class="banner__visual--figure">
-				<img alt="" src="http://placehold.it/1400x520">
+				<img src="{{ $banner_visual['url'] }}" alt="{{ $banner_visual['title'] }}">
 			</figure>
 		</div>
 	</section>
+	@endif
 	
 	<section class="agenda">
 		<header class="agenda__header">
@@ -237,5 +201,5 @@
 		<div class="contact__col--right" style="background-image:url('http://placehold.it/600x750');">
 		</div>
 	</section>
-	@endwhile
+
 @endsection

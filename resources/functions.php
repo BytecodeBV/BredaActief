@@ -93,3 +93,23 @@ Container::getInstance()
 
 global $text_domain;
 $text_domain = 'breda-actief';
+
+
+/**
+ * Image sizes
+ */
+add_image_size('image-large', 1920, 1300, true);
+add_image_size('image-banner', 1920, 713, true);
+add_image_size('image-feat', 650, 650, true);
+
+/**
+ * Add excerpts to pages
+ */
+add_post_type_support( 'page', 'excerpt' );
+
+/**
+ * Add post thumbnail theme support
+ */
+add_theme_support( 'post-thumbnails' );
+
+
