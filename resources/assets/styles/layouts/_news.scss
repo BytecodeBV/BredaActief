@@ -24,6 +24,10 @@
 
   &__header {
     margin-left: 80px;
+
+    @include breakpoint(for-desktop-up ) {
+      margin-left: 160px;
+    }
   }
 
   &__item-wrapper {
