@@ -1,15 +1,15 @@
 html {
   font-size: 8px;
 
-  @include for-tablet-landscape-up {
+  @include breakpoint(for-tablet-landscape-up) {
     font-size: 7px;
   }
 
-  @include for-desktop-up {
+  @include breakpoint(for-desktop-up) {
     font-size: 8px;
   }
 
-  @include for-medium-desktop-up {
+  @include breakpoint(for-medium-desktop-up) {
     font-size: 62.5%;
   }
 }

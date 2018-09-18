@@ -31,7 +31,7 @@
     flex-direction: column;
 
 
-    @include for-tablet-landscape-up {
+    @include breakpoint(for-tablet-landscape-up) {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -43,11 +43,11 @@
     position: relative;
     margin-bottom: 40px;
 
-    @include for-tablet-portrait-up {
+    @include breakpoint(for-tablet-portrait-up) {
       margin-bottom: 80px;
     }
 
-    @include for-tablet-landscape-up {
+    @include breakpoint(for-tablet-landscape-up) {
       display: flex;
       width: 47.5%;
       margin-bottom: 60px;
@@ -58,7 +58,7 @@
     width: 100%;
     margin-bottom: 20px;
 
-    @include for-tablet-portrait-up {
+    @include breakpoint(for-tablet-portrait-up) {
       width: 190px;
       position: absolute;
       top: 0;
@@ -77,11 +77,11 @@
   &__item--text {
     width: 100%;
 
-    @include for-tablet-portrait-up {
+    @include breakpoint(for-tablet-portrait-up) {
       padding-left: 220px;
     }
 
-    @include for-desktop-up {
+    @include breakpoint(for-desktop-up) {
       padding-left: 235px;
     }
   }
@@ -94,11 +94,11 @@
     font-weight: bold;
     text-transform: none;
 
-    @include for-tablet-portrait-up {
+    @include breakpoint(for-tablet-portrait-up) {
       margin-bottom: 40px;
     }
 
-    @include for-desktop-up {
+    @include breakpoint(for-desktop-up) {
       margin-bottom: 30px;
     }
   }

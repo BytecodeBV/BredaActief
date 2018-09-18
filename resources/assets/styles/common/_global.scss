@@ -5,11 +5,11 @@
   width: 90%;
   margin: 0 auto;
 
-  @include for-tablet-landscape-up {
+  @include breakpoint(for-tablet-landscape-up) {
     width: 94%;
   }
 
-  @include for-medium-desktop-up {
+  @include breakpoint(for-medium-desktop-up) {
     width: 100%;
   }
 

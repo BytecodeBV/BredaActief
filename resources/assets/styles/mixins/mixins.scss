@@ -18,39 +18,25 @@
   text-decoration: underline;
 }
 
-@mixin for-phone-only {
-  @media (max-width: 599px) {
-    @content;
+@mixin breakpoint($point) {
+  @if $point == for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @else if $point == for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @else if $point == for-desktop-up {
+    @media (min-width: 1200px)  { @content; }
+  }
+  @else if $point == for-medium-desktop-up {
+    @media (min-width: 1500px)  { @content; }
+  }
+  @else if $point == for-big-desktop-up {
+    @media (min-width: 1800px)  { @content; }
   }
 }
 
-@mixin for-tablet-portrait-up {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin for-tablet-landscape-up {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin for-desktop-up {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin for-medium-desktop-up {
-  @media (min-width: 1500px) {
-    @content;
-  }
-}
-
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
 

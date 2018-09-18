@@ -59,7 +59,7 @@ input[type="submit"] {
   position: relative;
   padding-right: 20px;
 
-  @include for-phone-only {
+  @include breakpoint(for-phone-only) {
     position: absolute;
     bottom: -51px;
     width: 100%;
@@ -81,7 +81,7 @@ input[type="submit"] {
   }
 
   &__inner {
-    @include for-phone-only {
+    @include breakpoint(for-phone-only) {
       position: relative;
       width: 90%;
       margin: 0 auto;
@@ -96,7 +96,7 @@ input[type="submit"] {
     margin: 0 10px 0 40px;
     padding: 5px 15px;
 
-    @include for-phone-only {
+    @include breakpoint(for-phone-only) {
       border-color: $red;
       margin: 0;
       width: 100%;
@@ -117,7 +117,7 @@ input[type="submit"] {
     top: calc(50% - 12px);
     right: 0;
 
-    @include for-phone-only {
+    @include breakpoint(for-phone-only) {
       right: 20px;
       opacity: 0;
       visibility: hidden;
@@ -128,7 +128,7 @@ input[type="submit"] {
 .search-toggle {
   display: none;
   
-  @include for-phone-only {
+  @include breakpoint(for-phone-only) {
     display: block;
   }
 
