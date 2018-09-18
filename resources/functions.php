@@ -91,9 +91,12 @@ Container::getInstance()
         ]);
     }, true);
 
+
+/**
+ * Add text domain global variable
+ */
 global $text_domain;
 $text_domain = 'breda-actief';
-
 
 /**
  * Image sizes
@@ -112,4 +115,55 @@ add_post_type_support( 'page', 'excerpt' );
  */
 add_theme_support( 'post-thumbnails' );
 
+/**
+ * Add ACF Options page
+ */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Contact',
+		'menu_title'	=> 'Contact',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Social',
+		'menu_title'	=> 'Social',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+}
 
+/**
+ * Add Shortcode for social icons
+ */
+//shortcode
+function social_shortcode($atts, $content = null){
+	
+	$template_url = get_template_directory_uri();
+	$social = '';
+	$social .= '<nav class="social">';
+	$social .= '<ul>';
+	$social .= '<li class="facebook"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_fb.svg').'</a></li>';
+	$social .= '<li class="twitter"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_twitter.svg').'</a></li>';
+	$social .= '<li class="instagram"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_insta.svg').'</a></li>';
+	$social .= '<li class="linkedin"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_linkedin.svg').'</a></li>';
+	$social .= '<li class="youtube"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_youtube.svg').'</a></li>';
+	$social .= '</ul>';
+	$social .= '</nav>';
+	
+	return $social;
+}
+add_shortcode( 'social', 'social_shortcode' );
