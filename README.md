@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.org/BytecodeBV/breda-actief.svg?branch=master)](https://travis-ci.org/BytecodeBV/breda-actief)
 [![CodeFactor](https://www.codefactor.io/repository/github/bytecodebv/breda-actief/badge)](https://www.codefactor.io/repository/github/bytecodebv/breda-actief)
 [![dependencies Status](https://david-dm.org/bytecodebv/breda-actief/status.svg)](https://david-dm.org/bytecodebv/breda-actief)
-[![devDependencies Status](https://david-dm.org/bytecodebv/breda-actief/dev-status.svg)](https://david-dm.org/bytecodebv/breda-actief?type=dev)
+[![devDependencies Status](https://david-dm.org/bytecodebv/breda-actief/dev-status.svg)](https://david-dm.org/bytecodebv/breda-actief?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/BytecodeBV/BredaActief.svg)](https://greenkeeper.io/)
 
 Breda Actief WordPress theme based on Sage.
 
