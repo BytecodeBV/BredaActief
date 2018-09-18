@@ -30,31 +30,31 @@ $banner_visual = get_field('banner_visual');
 		<section class="featured">
 			<div class="center">
 				@while (have_rows('feat_blocks')) @php(the_row())
+				<?php
+				$block_color = get_sub_field('block_color');
+				$post_object = get_sub_field('block');
+				?>
+				@if( $post_object )
 					<?php
-					$block_color = get_sub_field('block_color');
-					$post_object = get_sub_field('block');
+					// override $post
+					$post = $post_object;
+					setup_postdata( $post );
+					
+					$trimmed = wp_trim_words( get_the_content(), 17, '...' );
 					?>
-					@if( $post_object )
-						<?php
-						// override $post
-						$post = $post_object;
-						setup_postdata( $post );
-						
-						$trimmed = wp_trim_words( get_the_content(), 17, '...' );
-						?>
-						<article class="featured__item" style="background: {{ $block_color }}">
-							<figure class="featured__figure">
-								@if ( has_post_thumbnail( $post->ID ))
-									{!! get_the_post_thumbnail($post->ID, 'image-feat' ) !!}
-								@endif
-							</figure>
-							<div class="featured__content--wrapper">
-								<h2 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h2>
-								<p class="featured__content--intro">{{ $trimmed }} <a class="featured__content--link" href="{{ get_the_permalink($post->ID) }}"><?php echo __('Lees meer >', $text_domain); ?></a></p>
-							</div>
-						</article>
-						<?php wp_reset_postdata(); ?>
-					@endif
+					<article class="featured__item" style="background: {{ $block_color }}">
+						<figure class="featured__figure">
+							@if ( has_post_thumbnail( $post->ID ))
+								{!! get_the_post_thumbnail($post->ID, 'image-feat' ) !!}
+							@endif
+						</figure>
+						<div class="featured__content--wrapper">
+							<h2 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h2>
+							<p class="featured__content--intro">{{ $trimmed }} <a class="featured__content--link" href="{{ get_the_permalink($post->ID) }}"><?php echo __('Lees meer >', $text_domain); ?></a></p>
+						</div>
+					</article>
+					<?php wp_reset_postdata(); ?>
+				@endif
 				@endwhile
 			</div>
 		</section>
@@ -62,15 +62,38 @@ $banner_visual = get_field('banner_visual');
 	
 	
 	@if( $banner_visual )
-	<section class="banner__visual">
-		<div class="center">
-			<figure class="banner__visual--figure">
-				<img src="{{ $banner_visual['url'] }}" alt="{{ $banner_visual['title'] }}">
-			</figure>
-		</div>
-	</section>
+		<section class="banner__visual">
+			<div class="center">
+				<figure class="banner__visual--figure">
+					<img src="{{ $banner_visual['url'] }}" alt="{{ $banner_visual['title'] }}">
+				</figure>
+			</div>
+		</section>
 	@endif
 	
+	<?php
+	$today = date('Ymd');
+	$args_events = array(
+		'post_type' => 'agenda',
+		'posts_per_page' => 10,
+		'post_status' => 'publish',
+		'meta_query' => array(
+			array(
+				'key' => 'event_date',
+				'value' => $today,
+				'type' => 'DATE',
+				'compare' => '>='
+			)
+		),
+		'meta_key' => 'event_date',
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC',
+	);
+	
+	$events = new WP_Query($args_events);
+	
+	if( $events->have_posts()) :
+	?>
 	<section class="agenda">
 		<header class="agenda__header">
 			<div class="center">
@@ -78,128 +101,62 @@ $banner_visual = get_field('banner_visual');
 			</div>
 		</header>
 		<div class="slider">
+			<?php while($events->have_posts() ) : $events->the_post(); ?>
 			<article class="agenda__event">
 				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
+				<span class="agenda__event--date">{{ the_field('event_date') }}</span>
 				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
+					<h3 class="agenda__event--title">{{ the_title() }}</h3>
+					<p class="agenda__event--subtitle">{{ the_content() }}</p>
 				</div>
 			</article>
-			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
-				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-				</div>
-			</article>
-			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
-				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-				</div>
-			</article>
-			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
-				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-				</div>
-			</article>
-			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
-				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-				</div>
-			</article>
-			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">24/05</span>
-				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">Voetbal<br />Tournooi</h3>
-					<p class="agenda__event--subtitle">Sportvelden - Breda</p>
-				</div>
-			</article>
+			<?php endwhile; ?>
 		</div>
 		<div class="center">
-			<a class="show__all" href="#">Bekijk alles ></a>
+			<a class="show__all" href="#"><?php echo __('Bekijk alles >', $text_domain); ?></a>
 		</div>
 	</section>
+	<?php wp_reset_postdata(); endif; ?>
 	
+	
+	<?php
+	$args_news = array(
+		'post_type' => 'post',
+		'posts_per_page' => 4,
+		'order' => 'DESC',
+		'orderby' => 'date'
+	);
+	
+	$news = new WP_Query($args_news);
+	
+	if( $news->have_posts()) :
+	?>
 	<section class="news">
 		<div class="center">
 			<header class="news__header">
 				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
 			</header>
 			<div class="news__item-wrapper">
+				
+				<?php while( $news->have_posts()) : $news->the_post(); ?>
+				<?php $trimmed = wp_trim_words( get_the_content(), 23, '...' ); ?>
 				<article class="news__item">
-					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
-					<div class="news__item--text">
-						<h3 class="news__item--title">Sportdag groot succes!</h3>
-						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
-					</div>
+					<a href="{{ the_permalink() }}">
+						<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+						<div class="news__item--text">
+							<h3 class="news__item--title">{{ the_title() }}</h3>
+							<p class="news__item--intro">{{ $trimmed }}</p>
+						</div>
+					</a>
 				</article>
-				<article class="news__item">
-					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
-					<div class="news__item--text">
-						<h3 class="news__item--title">Sportdag groot succes!</h3>
-						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
-					</div>
-				</article>
-				<article class="news__item">
-					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
-					<div class="news__item--text">
-						<h3 class="news__item--title">Sportdag groot succes!</h3>
-						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
-					</div>
-				</article>
-				<article class="news__item">
-					<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
-					<div class="news__item--text">
-						<h3 class="news__item--title">Sportdag groot succes!</h3>
-						<p class="news__item--intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod...</p>
-					</div>
-				</article>
+				<?php endwhile; ?>
+				
 			</div>
-			<a class="show__all" href="#">Bekijk alles ></a>
+			<a class="show__all" href="#"><?php echo __('Bekijk alles >', $text_domain); ?></a>
 		</div>
 	</section>
-	<section class="contact">
-		<div class="contact__col--left">
-			<article class="contact__article">
-				<header class="contact__header">
-					<h2 class="contact__header--title">Vragen</h2>
-					<p class="contact__header--subtitle">Neem contact met ons op</p>
-				</header>
-				<form action="#">
-					<div class="group">
-						<div class="field-wrapper left">
-							<label for="">Naam</label>
-							<input type="text" name="name">
-						</div>
-						<div class="field-wrapper right">
-							<label for="">E-mail</label>
-							<input type="email" name="email">
-						</div>
-					</div>
-					<div class="field-wrapper field-textarea">
-						<label for="">Hoe kunnen we je helpen</label>
-						<textarea name="" id="" cols="30" rows="10"></textarea>
-					</div>
-					<div class="field-wrapper field-submit group">
-						<input type="submit" value="versturen >">
-					</div>
-				</form>
-			</article>
-		</div>
-		<div class="contact__col--right" style="background-image:url('http://placehold.it/600x750');">
-		</div>
-	</section>
+	<?php wp_reset_postdata(); endif; ?>
+	
+	@include('partials.content-contact')
 
 @endsection
