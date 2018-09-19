@@ -1,8 +1,6 @@
 <?php
 global $text_domain;
 $page_id = get_the_ID();
-$feat_pages = get_field('feat_blocks');
-$banner_visual = get_field('banner_visual');
 ?>
 
 @extends('layouts.app')
@@ -60,14 +58,16 @@ $banner_visual = get_field('banner_visual');
 		</section>
 	@endif
 	
+	<?php
+	$banner_visual_id = get_field('banner_visual')['ID'];
+	$banner_visual = wp_get_attachment_image($banner_visual_id, 'image-banner');
+	?>
 	
-	@if( $banner_visual )
+	@if( $banner_visual_id )
 		<section class="banner__visual">
-			<div class="center">
-				<figure class="banner__visual--figure">
-					<img src="{{ $banner_visual['url'] }}" alt="{{ $banner_visual['title'] }}">
-				</figure>
-			</div>
+			<figure class="banner__visual--figure">
+				{!! $banner_visual !!}
+			</figure>
 		</section>
 	@endif
 	
@@ -102,12 +102,16 @@ $banner_visual = get_field('banner_visual');
 		</header>
 		<div class="slider">
 			<?php while($events->have_posts() ) : $events->the_post(); ?>
+			<?php
+				$post_thumb_id = get_post_thumbnail_id();
+				$post_thumb = wp_get_attachment_image($post_thumb_id, 'image-feat');
+				?>
 			<article class="agenda__event">
-				<figure class="agenda__event--img"><img width="290" height="290" src="http://placehold.it/290x290" alt=""></figure>
-				<span class="agenda__event--date">{{ the_field('event_date') }}</span>
+				<figure class="agenda__event--img">{!! $post_thumb !!}</figure>
+				<span class="agenda__event--date" style="background-color: {{ the_field('event_date_color') }};">{{ the_field('event_date') }}</span>
 				<div class="agenda__event--text">
 					<h3 class="agenda__event--title">{{ the_title() }}</h3>
-					<p class="agenda__event--subtitle">{{ the_content() }}</p>
+					<p class="agenda__event--subtitle">{{ the_field('event_subtitle')  }}</p>
 				</div>
 			</article>
 			<?php endwhile; ?>
@@ -139,10 +143,14 @@ $banner_visual = get_field('banner_visual');
 			<div class="news__item-wrapper">
 				
 				<?php while( $news->have_posts()) : $news->the_post(); ?>
-				<?php $trimmed = wp_trim_words( get_the_content(), 23, '...' ); ?>
+				<?php
+					$trimmed = wp_trim_words( get_the_content(), 23, '...' );
+					$post_thumb_id = get_post_thumbnail_id();
+					$post_thumb = wp_get_attachment_image($post_thumb_id, 'image-feat');
+				?>
 				<article class="news__item">
 					<a href="{{ the_permalink() }}">
-						<figure class="news__item--img"><img src="http://placehold.it/290x290" alt=""></figure>
+						<figure class="news__item--img">{!! $post_thumb !!} </figure>
 						<div class="news__item--text">
 							<h3 class="news__item--title">{{ the_title() }}</h3>
 							<p class="news__item--intro">{{ $trimmed }}</p>

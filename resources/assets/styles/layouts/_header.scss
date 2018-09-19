@@ -188,6 +188,18 @@
     text-transform: uppercase;
     font-family: $serif;
     font-size: 1.854rem;
+    font-weight: bold;
+
+    a {
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      a {
+        color: $red;
+        text-decoration: none;
+      }
+    }
   }
 }
 

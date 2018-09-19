@@ -47,6 +47,18 @@
     position: relative;
     margin-bottom: 40px;
 
+    a {
+      text-decoration: none;
+    }
+
+    h3 {
+      transition: color 0.3s ease;
+    }
+
+    &:hover h3 {
+      color: $red;
+    }
+
     @include breakpoint(for-tablet-portrait-up) {
       margin-bottom: 80px;
     }

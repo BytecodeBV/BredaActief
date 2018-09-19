@@ -101,9 +101,13 @@ $text_domain = 'breda-actief';
 /**
  * Image sizes
  */
-add_image_size('image-large', 1920, 1300, true);
+add_image_size('image-header', 1920, 1300, true);
 add_image_size('image-banner', 1920, 713, true);
+add_image_size('image-banner-m', 1280, 475, true);
+add_image_size('image-banner-s', 600, 223, true);
 add_image_size('image-feat', 650, 650, true);
+add_image_size('image-feat-s', 360, 360, true);
+add_image_size('image-half-block', 600, 750, true);
 
 /**
  * Add excerpts to pages
@@ -152,15 +156,37 @@ if( function_exists('acf_add_options_page') ) {
 //shortcode
 function social_shortcode($atts, $content = null){
 	
+	$fb_url = get_field('facebook_url', 'option');
+	$twitter_url = get_field('twitter_url', 'option');
+	$insta_url = get_field('instagram_url', 'option');
+	$linkedin_url = get_field('linkedin_url', 'option');
+	$youtube_url = get_field('youtube_url', 'option');
+	
 	$template_url = get_template_directory_uri();
 	$social = '';
 	$social .= '<nav class="social">';
 	$social .= '<ul>';
-	$social .= '<li class="facebook"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_fb.svg').'</a></li>';
-	$social .= '<li class="twitter"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_twitter.svg').'</a></li>';
-	$social .= '<li class="instagram"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_insta.svg').'</a></li>';
-	$social .= '<li class="linkedin"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_linkedin.svg').'</a></li>';
-	$social .= '<li class="youtube"><a href="#">'.file_get_contents($template_url . '/assets/images/icon_youtube.svg').'</a></li>';
+	
+	if (!empty($fb_url)) :
+	$social .= '<li class="facebook"><a href="'.esc_url($fb_url).'" target="_blank">'.file_get_contents($template_url . '/assets/images/icon_fb.svg').'</a></li>';
+	endif;
+	
+	if (!empty($twitter_url)) :
+	$social .= '<li class="twitter"><a href="'.esc_url($twitter_url).'" target="_blank">'.file_get_contents($template_url . '/assets/images/icon_twitter.svg').'</a></li>';
+	endif;
+	
+	if (!empty($insta_url)) :
+	$social .= '<li class="instagram"><a href="'.esc_url($insta_url).'" target="_blank">'.file_get_contents($template_url . '/assets/images/icon_insta.svg').'</a></li>';
+	endif;
+	
+	if (!empty($linkedin_url)) :
+	$social .= '<li class="linkedin"><a href="'.esc_url($linkedin_url).'" target="_blank">'.file_get_contents($template_url . '/assets/images/icon_linkedin.svg').'</a></li>';
+	endif;
+	
+	if (!empty($youtube_url)) :
+	$social .= '<li class="youtube"><a href="'.esc_url($youtube_url).'" target="_blank">'.file_get_contents($template_url . '/assets/images/icon_youtube.svg').'</a></li>';
+	endif;
+	
 	$social .= '</ul>';
 	$social .= '</nav>';
 	

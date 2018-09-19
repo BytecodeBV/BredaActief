@@ -2,7 +2,8 @@
 $contact_title = get_field('contact_title', 'option');
 $contact_subtitle = get_field('contact_subtitle', 'option');
 $contact_form = get_field('contact_form', 'option');
-$contact_image = get_field('contact_image', 'option');
+$contact_image_id = get_field('contact_image', 'option');
+$contact_image_url = wp_get_attachment_image_url($contact_image_id['ID'], 'image-half-block');
 ?>
 
 <section class="contact">
@@ -15,6 +16,6 @@ $contact_image = get_field('contact_image', 'option');
 			{!! $contact_form !!}
 		</article>
 	</div>
-	<div class="contact__col--right" style="background-image:url('{{ $contact_image['url'] }}');">
+	<div class="contact__col--right" style="background-image:url('{!! $contact_image_url !!}');">
 	</div>
 </section>

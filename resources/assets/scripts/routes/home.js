@@ -17,7 +17,6 @@ export default {
           settings: {
             slidesToShow: 4,
             slidesToScroll: 1,
-            infinite: true,
           },
         },
         {
@@ -25,7 +24,6 @@ export default {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 1,
-            infinite: true,
           },
         },
         {
@@ -33,7 +31,6 @@ export default {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 1,
-            infinite: true,
           },
         },
         {
@@ -41,7 +38,6 @@ export default {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            infinite: true,
           },
         },
         // You can unslick at a given breakpoint now by adding:
