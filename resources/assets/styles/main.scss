@@ -1,4 +1,6 @@
+@import "common/reset";
 @import "common/variables";
+@import "mixins/mixins";
 
 /** Import everything from autoload */
 @import "./autoload/**/*";
@@ -13,6 +15,7 @@
 
 /** Import theme styles */
 @import "common/global";
+@import "common/typography";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -23,3 +26,7 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+@import "layouts/featured-blocks";
+@import "layouts/agenda";
+@import "layouts/news";
+@import "layouts/contact";

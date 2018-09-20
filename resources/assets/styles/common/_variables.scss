@@ -1,6 +1,16 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
-$theme-colors: (
-  primary: #525ddc
-);
+/** colors */
+$color-blue: #5bc2e7;
+$color-white: #fff;
+$color-red: #f23030;
+
+/** typography */
+$sans-serif: 'Karla', sans-serif;
+$serif: 'Arvo', serif;
+
+/** font weights */
+$normal: 400;
+$bold: 700;
+

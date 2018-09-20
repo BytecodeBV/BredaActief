@@ -1,0 +1,34 @@
+.home {
+  .intro {
+    color: $blue;
+    margin: 0 auto;
+    padding: 60px 0 80px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(for-desktop-up) {
+      padding: 0 0 180px;
+    }
+
+    .center {
+      max-width: 980px;
+    }
+
+    .intro__article--content {
+      font-size: 3.1rem;
+      line-height: 1.32;
+      font-weight: normal;
+    }
+  }
+}
+
+.banner__visual--figure {
+  margin-bottom: 65px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

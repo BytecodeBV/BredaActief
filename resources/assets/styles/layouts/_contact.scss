@@ -1,0 +1,106 @@
+.contact {
+  position: relative;
+
+  * {
+    color: $blue;
+  }
+
+  &__col--left {
+    @include breakpoint(for-tablet-landscape-up) {
+      width: 100%;
+      padding: 100px 42.8% 100px 0;
+    }
+  }
+
+  &__col--right {
+    min-height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      min-height: 600px;
+    }
+
+    @include breakpoint(for-tablet-landscape-up) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42.8%;
+      height: 100%;
+      min-height: auto;
+    }
+  }
+
+  &__article {
+    width: 90%;
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+
+  &__header {
+    margin-bottom: 70px;
+  }
+
+  &__header--title {
+    @include title;
+
+    margin: 0;
+  }
+
+  &__header--subtitle {
+    font-size: 3.1rem;
+  }
+
+  form {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  .field-wrapper {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @include breakpoint(for-tablet-landscape-up) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .group {
+    .field-wrapper {
+      width: 100%;
+
+      @include breakpoint(for-tablet-landscape-up) {
+        width: 48.5%;
+      }
+    }
+  }
+
+
+
+  .field-textarea,
+  .field-submit {
+
+
+
+  }
+
+  .field-textarea {
+    textarea {
+      height: 150px;
+    }
+  }
+
+  .field-submit {
+    input[type="submit"] {
+      padding: 0;
+    }
+  }
+}

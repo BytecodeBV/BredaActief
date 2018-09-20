@@ -1,0 +1,42 @@
+@mixin title {
+  font-family: $serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $blue;
+}
+
+@mixin image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@mixin link {
+  font-family: $sans-serif;
+  font-size: 3.1rem;
+  color: $blue;
+  text-decoration: underline;
+}
+
+@mixin breakpoint($point) {
+  @if $point == for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @else if $point == for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @else if $point == for-desktop-up {
+    @media (min-width: 1200px)  { @content; }
+  }
+  @else if $point == for-medium-desktop-up {
+    @media (min-width: 1500px)  { @content; }
+  }
+  @else if $point == for-big-desktop-up {
+    @media (min-width: 1800px)  { @content; }
+  }
+}
+
+
