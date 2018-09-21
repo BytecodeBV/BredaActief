@@ -48,14 +48,18 @@
     @include title;
 
     font-family: $serif;
-    font-size: 3.508rem;
+    font-size: 2.8rem;
     color: $white;
     margin-bottom: 0;
     text-shadow: 5px 2px 4px rgba(150, 150, 150, 1);
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 3.0rem;
+    }
   }
 
   &--subtitle {
-    font-size: 2.091rem;
+    font-size: 2.0rem;
     font-family: 'Karla', sans-serif;
     margin-bottom: 0;
   }

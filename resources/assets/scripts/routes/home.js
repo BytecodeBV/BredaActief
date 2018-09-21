@@ -13,7 +13,7 @@ export default {
       centerMode: true,
       responsive: [
         {
-          breakpoint: 1500,
+          breakpoint: 1700,
           settings: {
             slidesToShow: 4,
             slidesToScroll: 1,

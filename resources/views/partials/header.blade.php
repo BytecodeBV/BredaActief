@@ -24,14 +24,11 @@
 		wp_nav_menu($args);
 		?>
 		<?php $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
-      <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <div class="search-form__inner">
-          <input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Zoeken', 'placeholder', $text_domain ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-          <button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', $text_domain ); ?></span></button>
-        </div>
-      </form>
+      
+      @include('partials.searchform')
+      
       <a class="search-toggle" href="#">
-        <?php echo file_get_contents( get_template_directory_uri() . '/assets/images/search_toggle.svg'); ?>
+		  <?php echo file_get_contents( get_template_directory_uri() . '/assets/images/search_toggle.svg'); ?>
       </a>
       <a class="mob-menu-toggle" href="#mob-menu">
         <div id="mob-icon" class="hamburger hamburger--slider js-hamburger">

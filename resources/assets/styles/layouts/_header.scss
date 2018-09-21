@@ -242,8 +242,10 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background: url('../../../assets/images/header_overlay.png') no-repeat left top;
+    background-image: url('../../../assets/images/header_overlay.png');
+    background-repeat: no-repeat;
     background-size: contain;
+    background-position: left top;
   }
 
   &::after {

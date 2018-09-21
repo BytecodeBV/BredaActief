@@ -1,7 +1,6 @@
-<form role="search" method="get" class="search-form" action="{{ $sf_action }}">
-  <label>
-    <span class="screen-reader-text">{{ $sf_screen_reader_text }}</span>
-    <input type="search" class="search-field" placeholder="{!! $sf_placeholder !!}" value="{{ $sf_current_query }}" name="s">
-  </label>
-  <input type="submit" class="search-submit" value="{{ $sf_submit_text }}">
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+  <div class="search-form__inner">
+    <input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Zoeken', 'placeholder', $text_domain ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+    <button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', $text_domain ); ?></span></button>
+  </div>
 </form>
