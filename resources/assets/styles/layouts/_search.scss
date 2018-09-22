@@ -1,0 +1,22 @@
+body.search {
+  .center {
+    max-width: 1150px;
+  }
+  article {
+    margin-bottom: 40px;
+  }
+}
+
+.search__value {
+  margin-bottom: 40px;
+}
+
+.search__pagination {
+  padding: 60px 0 0 0;
+}
+
+.search__no-results {
+  .alert {
+    display: inline-block;
+  }
+}
