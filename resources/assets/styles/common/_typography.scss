@@ -1,5 +1,5 @@
 html {
-  font-size: 62.5%;
+ font-size: 62.5%;
 }
 
 body {
@@ -7,6 +7,10 @@ body {
   font-size: 1.6rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.main {
+  font-size: 2.2rem;
 }
 
 h1,
@@ -34,11 +38,32 @@ h2 {
   }
 }
 
+h2 {
+  font-size: 4rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif, sans-serif;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: none;
+}
+
 h3 {
   font-size: 3.1rem;
+}
+
+h4 {
+  font-size: 2.6rem;
 }
 
 h5 {
   font-size: 2.45rem;
 }
 
+h6 {
+  font-size: 1.8rem;
+}

@@ -1,6 +1,6 @@
-<?php global $text_domain; ?>
+@php global $text_domain; @endphp
 <header class="banner" role="banner">
-  <nav class="nav-top" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', $text_domain ); ?>">
+  <nav class="nav-top" role="navigation" aria-label="{!! esc_attr_e( 'Top Menu', $text_domain ) !!}">
     <div class="center">
       <ul class="nav-top__menu">
         <li class="nav-top__item nav-top__item-read">

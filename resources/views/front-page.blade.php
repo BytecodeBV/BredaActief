@@ -7,14 +7,14 @@ $page_id = get_the_ID();
 
 @section('content')
 	
-	@include('partials.header-visual');
+	@include('partials.header-visual')
 	
 	@while(have_posts()) @php the_post() @endphp
 	<section class="intro">
 		<div class="center">
 			<article id="post-{{ get_the_ID() }}">
 				<header class="intro__article--header">
-					<h2>{{ the_title() }}</h2>
+					<h1>{{ the_title() }}</h1>
 				</header>
 				<div class="intro__article--content">
 					{{ the_content() }}
@@ -47,7 +47,7 @@ $page_id = get_the_ID();
 							@endif
 						</figure>
 						<div class="featured__content--wrapper">
-							<h2 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h2>
+							<h1 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h1>
 							<p class="featured__content--intro">{{ $trimmed }} <a class="featured__content--link" href="{{ get_the_permalink($post->ID) }}"><?php echo __('Lees meer >', $text_domain); ?></a></p>
 						</div>
 					</article>
@@ -97,7 +97,7 @@ $page_id = get_the_ID();
 	<section class="agenda">
 		<header class="agenda__header">
 			<div class="center">
-				<h2><?php echo __('Agenda', $text_domain); ?></h2>
+				<h1><?php echo __('Agenda', $text_domain); ?></h1>
 			</div>
 		</header>
 		<div class="slider">
@@ -110,7 +110,7 @@ $page_id = get_the_ID();
 				<figure class="agenda__event--img">{!! $post_thumb !!}</figure>
 				<span class="agenda__event--date" style="background-color: {{ the_field('event_date_color') }};">{{ the_field('event_date') }}</span>
 				<div class="agenda__event--text">
-					<h3 class="agenda__event--title">{{ the_title() }}</h3>
+					<h2 class="agenda__event--title">{{ the_title() }}</h2>
 					<p class="agenda__event--subtitle">{{ the_field('event_subtitle')  }}</p>
 				</div>
 			</article>
@@ -138,7 +138,7 @@ $page_id = get_the_ID();
 	<section class="news">
 		<div class="center">
 			<header class="news__header">
-				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
+				<h1><?php echo __('Nieuws', $text_domain); ?></h1>
 			</header>
 			<div class="news__item-wrapper">
 				
@@ -152,7 +152,7 @@ $page_id = get_the_ID();
 					<a href="{{ the_permalink() }}">
 						<figure class="news__item--img">{!! $post_thumb !!} </figure>
 						<div class="news__item--text">
-							<h3 class="news__item--title">{{ the_title() }}</h3>
+							<h2 class="news__item--title">{{ the_title() }}</h2>
 							<p class="news__item--intro">{{ $trimmed }}</p>
 						</div>
 					</a>
