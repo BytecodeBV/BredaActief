@@ -143,5 +143,31 @@ input[type="submit"] {
   }
 }
 
+#search-form-news {
+  visibility: visible;
+  opacity: 1;
+  background: transparent;
 
+  @include breakpoint(for-phone-only) {
+    position: static;
+  }
 
+  .search-form__inner {
+    width: 100%;
+    left: 0;
+  }
+
+  .search-field {
+    border-color: $blue;
+  }
+
+  .search-submit {
+    opacity: 1;
+    visibility: visible;
+    background: url('../../../assets/images/icon_loop_white.svg') no-repeat;
+
+    @include breakpoint(for-phone-only) {
+      background: url('../../../assets/images/icon_loop.svg') no-repeat;
+    }
+  }
+}
