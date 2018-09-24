@@ -193,3 +193,4 @@ function social_shortcode($atts, $content = null){
 	return $social;
 }
 add_shortcode( 'social', 'social_shortcode' );
+
