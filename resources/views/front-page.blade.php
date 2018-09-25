@@ -10,18 +10,7 @@ $page_id = get_the_ID();
 	@include('partials.header-visual')
 	
 	@while(have_posts()) @php the_post() @endphp
-	<section class="intro">
-		<div class="center">
-			<article id="post-{{ get_the_ID() }}">
-				<header class="intro__article--header">
-					<h1>{{ the_title() }}</h1>
-				</header>
-				<div class="intro__article--content">
-					{{ the_content() }}
-				</div>
-			</article>
-		</div>
-	</section>
+		@include('partials.content-intro')
 	@endwhile
 	
 	@if(have_rows('feat_blocks'))
