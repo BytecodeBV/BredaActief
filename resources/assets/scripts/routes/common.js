@@ -92,5 +92,16 @@ export default {
 
       $('.search-form').toggleClass('open');
     });
+
+    /**
+     * Add padding when block has figure
+     */
+
+    var blockTextFig = $('.page .block__text--figure');
+
+    if(blockTextFig.length >= 1) {
+      blockTextFig.parents('.flexible-block').addClass('padding-right');
+      blockTextFig.parents('.flexible-block').prev().addClass('padding-right')
+    }
   },
 };

@@ -7,6 +7,12 @@ body.search {
   }
 }
 
+.search__wrapper {
+  background: $white;
+  position: relative;
+  z-index: 2;
+}
+
 .search__value {
   margin-bottom: 40px;
 }

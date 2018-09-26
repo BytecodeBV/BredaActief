@@ -69,7 +69,7 @@
 		
 		$html = '';
 		$html .= '<section class="flexible-block block__text text__color--'.$text_color.'">';
-			$html .= '<div class="center center-small">';
+			$html .= '<div class="center center-small group">';
 			if(!empty($image)) :
 				$html .= '<figure class="block__text--figure"><img src="http://placehold.it/490x440" alt=""></figure>';
 			endif;
