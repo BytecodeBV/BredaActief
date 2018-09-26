@@ -1,25 +1,37 @@
-.home {
-  .intro {
-    color: $blue;
-    margin: 0 auto;
-    padding: 60px 0 80px;
-    background: #fff;
-    position: relative;
-    z-index: 2;
+.page {
+  .agenda {
+    padding: 100px 0 60px;
+  }
+}
+.page-article {
+  p {
+    a {
+      text-decoration: underline;
+      transition: color 0.3s ease;
 
-    @include breakpoint(for-desktop-up) {
-      padding: 0 0 180px;
+      &:hover {
+        color: $red;
+      }
     }
+  }
+}
 
-    .center {
-      max-width: 980px;
-    }
+.intro {
+  color: $blue;
+  margin: 0 auto;
+  padding: 60px 0 80px;
+  background: $white;
+  position: relative;
+  z-index: 2;
 
-    .intro__article--content {
-      font-size: 3.1rem;
-      line-height: 1.32;
-      font-weight: normal;
-    }
+  @include breakpoint(for-desktop-up) {
+    padding: 0 0 180px;
+  }
+
+  .intro__article--content {
+    font-size: 3.1rem;
+    line-height: 1.32;
+    font-weight: normal;
   }
 }
 

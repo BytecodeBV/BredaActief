@@ -11,8 +11,12 @@
     width: 100%;
   }
 
-  &.small {
+  &.center-medium {
     max-width: 1200px;
+  }
+
+  &.center-small {
+    max-width: 980px;
   }
 }
 
