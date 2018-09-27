@@ -191,10 +191,11 @@
     font-weight: bold;
 
     a {
-      transition: color 0.3s ease;
+      transition: color 0.5s ease;
     }
 
-    &:hover {
+    &:hover,
+    &.current-menu-item {
       a {
         color: $red;
         text-decoration: none;

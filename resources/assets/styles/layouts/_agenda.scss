@@ -10,6 +10,7 @@
       position: absolute;
       right: 0;
       bottom: 60px;
+      background-image: url('../../../assets/images/arrow_right_blue.svg');
     }
   }
 }
@@ -31,6 +32,10 @@
   font-size: 3.508rem;
   color: $white;
   font-weight: bold;
+
+  a {
+    color: inherit;
+  }
 
   &--date {
     display: block;
@@ -69,15 +74,25 @@
     left: 18px;
     bottom: 18px;
   }
-}
 
-.agenda__event--img {
-  margin: 0;
-
-  img {
+  &--img {
+    margin: 0;
+    overflow: hidden;
     border-radius: $border-radius;
 
-    @include image;
+    img {
+      transition: all 0.5s linear;
+
+      @include image;
+    }
+  }
+
+  &:hover {
+    .agenda__event--img {
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
@@ -119,5 +134,3 @@
     right: calc(50% - 7px);
   }
 }
-
-

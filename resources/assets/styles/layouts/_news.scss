@@ -1,3 +1,20 @@
+.show__all {
+  @include link;
+
+  padding-right: 40px;
+  color: $white;
+  background-image: url("../../../assets/images/arrow_right.svg");
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: 95% center;
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-position: 100% center;
+  }
+
+}
+
 .news {
   position: relative;
   padding: 90px 0;
@@ -58,11 +75,19 @@
     }
 
     h3 {
-      transition: color 0.3s ease;
+      transition: color 0.5s ease;
     }
 
-    &:hover h3 {
-      color: $red;
+    &:hover {
+      h3 {
+        color: $yellow;
+      }
+
+      .news__item--img {
+        img {
+          transform: scale(1.1);
+        }
+      }
     }
 
     @include breakpoint(for-tablet-portrait-up) {
@@ -79,20 +104,20 @@
   &__item--img {
     width: 100%;
     margin-bottom: 20px;
+    border-radius: $border-radius;
+    overflow: hidden;
 
     @include breakpoint(for-tablet-portrait-up) {
       width: 190px;
       position: absolute;
       top: 0;
       left: 0;
-
       overflow: hidden;
     }
 
     img {
-      border-radius: $border-radius;
-
       @include image;
+      transition: all 0.3s linear;
     }
   }
 
@@ -131,12 +156,13 @@
   }
 
   .show__all {
-    @include link;
-
     position: absolute;
     right: 0;
     bottom: -20px;
-    color: $white;
+
+    &:hover {
+      color: inherit;
+    }
   }
 }
 
