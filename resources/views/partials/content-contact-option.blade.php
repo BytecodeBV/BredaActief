@@ -1,13 +1,13 @@
 <?php
-$page_id = get_the_ID();
-$contact_title = get_field('contact_title', $page_id);
-$contact_subtitle = get_field('contact_subtitle', $page_id);
-$contact_form = get_field('contact_form', $page_id);
-$contact_image_id = get_field('contact_image', $page_id);
+$page_id = 'option';
+$contact_title = get_field('contact_title_option', $page_id);
+$contact_subtitle = get_field('contact_subtitle_option', $page_id);
+$contact_form = get_field('contact_form_option', $page_id);
+$contact_image_id = get_field('contact_image_option', $page_id);
 $contact_image_url = wp_get_attachment_image_url($contact_image_id['ID'], 'image-half-block');
-$contact_bg = get_field('contact_bg', $page_id);
-$contact_text_color = get_field('contact_text_color',$page_id);
-$contact_reverse = get_field('contact_reverse', $page_id);
+$contact_bg = get_field('contact_bg_option', $page_id);
+$contact_text_color = get_field('contact_text_color_option',$page_id);
+$contact_reverse = get_field('contact_reverse_option', $page_id);
 
 ?>
 

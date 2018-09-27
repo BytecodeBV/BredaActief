@@ -1,18 +1,18 @@
-.contact {
+.section-contact {
   position: relative;
 
   * {
     color: $blue;
   }
 
-  &__col--left {
+  .contact__col--left {
     @include breakpoint(for-tablet-landscape-up) {
       width: 100%;
       padding: 100px 42.8% 100px 0;
     }
   }
 
-  &__col--right {
+  .contact__col--right {
     min-height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,25 +32,34 @@
     }
   }
 
-  &__article {
+  .contact__article {
     width: 90%;
-    max-width: 960px;
-    text-align: center;
+    max-width: 640px;
     margin: 0 auto;
     padding: 60px 0;
+
+    @include breakpoint(for-desktop-up) {
+      padding: 60px;
+    }
+
+    * {
+      color: inherit !important;
+    }
+
   }
 
-  &__header {
-    margin-bottom: 70px;
+  .contact__header {
+    margin-bottom: 40px;
   }
 
-  &__header--title {
+  .contact__header--title {
     @include title;
 
-    margin: 0;
+    margin: 0 0 20px;
+    text-align: center;
   }
 
-  &__header--subtitle {
+  .contact__header--subtitle {
     font-size: 3.1rem;
   }
 
@@ -83,15 +92,6 @@
     }
   }
 
-
-
-  .field-textarea,
-  .field-submit {
-
-
-
-  }
-
   .field-textarea {
     textarea {
       height: 150px;
@@ -100,7 +100,60 @@
 
   .field-submit {
     input[type="submit"] {
+      padding: 0 40px 0 0;
+      background-image: url('../../../assets/images/arrow_right_blue.svg');
+      background-repeat: no-repeat;
+      background-size: 22px 22px;
+      background-position: 95% center;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background-position: 100% center;
+      }
+    }
+  }
+
+  .reverse {
+    .contact__col--left {
+      @include breakpoint(for-tablet-landscape-up) {
+        padding-right: 0;
+        padding-left: 42.8%;
+      }
+    }
+
+    .contact__col--right {
+      @include breakpoint(for-tablet-landscape-up) {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
+
+.contact {
+  .intro {
+    text-align: center;
+
+    @include breakpoint(for-tablet-landscape-up) {
+      text-align: left;
+    }
+
+    ul {
+      margin: 0;
       padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(for-tablet-landscape-up) {
+        flex-direction: row;
+      }
+
+      li {
+        @include breakpoint(for-tablet-landscape-up) {
+          flex: 1 1 255px;
+        }
+      }
     }
   }
 }

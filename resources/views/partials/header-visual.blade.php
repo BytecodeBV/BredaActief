@@ -15,9 +15,11 @@ $header_title = get_field('header_visual_title', $page_id);
 
 @if($header_visual_id)
 	<figure class="header-visual" style="background-image: url('<?php echo $header_visual_url; ?>');">
+		@if(!empty($header_title))
 		<div class="header-visual--title">
 			<h1>{!! $header_title !!}</h1>
 		</div>
+		@endif
 	</figure>
 @else
 	<figure class="header-visual" style="background-image: url(<?php echo get_site_url() .'/wp-content/uploads/2018/09/voetballende-jongens.jpeg'; ?>);"></figure>

@@ -45,7 +45,7 @@ $page_id = get_the_ID();
 	<section class="news">
 		<div class="center">
 			<header class="news__header">
-				<h1><?php echo __('Nieuws', $text_domain); ?></h1>
+				<h2><?php echo __('Nieuws', $text_domain); ?></h2>
 			</header>
 			<div class="news__item-wrapper">
 				
@@ -59,7 +59,7 @@ $page_id = get_the_ID();
 					<a href="{{ the_permalink() }}">
 						<figure class="news__item--img">{!! $post_thumb !!} </figure>
 						<div class="news__item--text">
-							<h2 class="news__item--title">{{ the_title() }}</h2>
+							<h3 class="news__item--title">{{ the_title() }}</h3>
 							<p class="news__item--intro">{{ $trimmed }}</p>
 						</div>
 					</a>
@@ -67,11 +67,11 @@ $page_id = get_the_ID();
 				<?php endwhile; ?>
 				
 			</div>
-			<a class="show__all" href="#"><?php echo __('Bekijk alles >', $text_domain); ?></a>
+			<a class="show__all" href="#"><?php echo __('Bekijk alles', $text_domain); ?></a>
 		</div>
 	</section>
 	<?php wp_reset_postdata(); endif; ?>
 	
-	@include('partials.content-contact')
+	@include('partials.content-contact-option')
 
 @endsection
