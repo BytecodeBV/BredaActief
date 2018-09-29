@@ -15,7 +15,7 @@ $contact_reverse = get_field('contact_reverse_option', $page_id);
 	<div class="contact__col--left">
 		<article class="contact__article" style="color: <?php echo $contact_text_color; ?>">
 			<header class="contact__header">
-				<h1 class="contact__header--title">{!! $contact_title !!}</h1>
+				<h2 class="contact__header--title">{!! $contact_title !!}</h2>
 				<div class="contact__header--subtitle">{!! $contact_subtitle !!}</div>
 			</header>
 			<div class="contact__content">
