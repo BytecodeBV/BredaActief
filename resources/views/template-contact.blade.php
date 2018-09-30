@@ -4,6 +4,11 @@
 
 @php global $text_domain; @endphp
 
+<?php
+	$contact_header = get_field('adres_header');
+	$contact_col_1 = get_field('adres_1');
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -13,33 +18,23 @@
 	<section class="intro">
 		<div class="center center-small">
 			<article @php post_class() @endphp>
-				<header><h2 class="entry-title">GEGEVENS</h2></header>
-				<ul>
-					<li>
-						<h3>Postadres</h3>
-						<p>Postbus 5765 <br />
-							4801RB Breda
-						</p>
-					</li>
-					<li>
-						<h3>Bezoekadres</h3>
-						<p>Heerbaan 100 <br />
-							4817 NL Breda
-						</p>
-					</li>
-					<li>
-						<h3>Contact</h3>
-						<p><a href="mailto:info@breda-actief.nl">info@breda-actief.nl</a> <br />
-							<a href="tel:07652335655">076 523 356 55</a>
-						</p>
-					</li>
-				</ul>
+				<header><h2 class="entry-title"><?php echo $contact_header; ?></h2></header>
+				<?php echo $contact_col_1; ?>
 			</article>
 		</div>
 	</section>
 	
 	@include('partials.content-contact')
 	
+	<?php
+		$args = array(
+			'post_type' => 'employee',
+			'posts_per_page' => -1,
+		);
+		
+		$employee_query = new WP_Query($args);
+	
+	if($employee_query->have_posts()) : ?>
 	<section class="employee__section">
 		<header class="employee__header">
 			<div class="center">
@@ -48,193 +43,56 @@
 		</header>
 		<div class="employee__wrapper">
 			<div class="center">
+				<?php while($employee_query->have_posts()) : $employee_query->the_post();
+					$first_name = get_field('first_name');
+					$last_name = get_field('last_name');
+					$job_title = get_field('job_title');
+					$phone = get_field('phone');
+					$phone_number = str_replace(' ', '', $phone);
+					$email = get_field('email');
+					$facebook = get_field('facebook');
+					$linkedin = get_field('linkedin');
+					$post_thumb = get_post_thumbnail_id();
+					$post_thumb_url = wp_get_attachment_image_src($post_thumb, 'image-feat');
+				?>
 				<article class="employee">
 					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
+						<img src="<?php echo $post_thumb_url[0]; ?>" alt="<?php echo get_the_title($post_thumb); ?>">
 					</figure>
 					<div class="employee__slide">
 						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
+							<h3 class="employee__info--name">{{ $first_name }} <br /> {{ $last_name }}</h3>
+							<p class="employee__info--job">{{ $job_title }}</p>
 						</div>
 						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
+							{{ the_content() }}
 						</div>
 						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
+							<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
+							<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
 							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
+								<?php
+									if(!empty($email)):
+										echo '<li class="mail"><a href="{{ $email }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>';
+									endif;
+								
+									if(!empty($facebook)):
+										echo '<li class="facebook"><a href="{{ $facebook }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>';
+									endif;
+									
+									if(!empty($linkedin)):
+										echo '<li class="linkedin"><a href="{{ $linkedin }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>';
+									endif;
+								 ?>
 							</ul>
 						</div>
 					</div>
 				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="employee">
-					<figure class="employee__photo">
-						<img src="<?php echo get_template_directory_uri() . '/assets/images/employee.png'; ?>" alt="">
-					</figure>
-					<div class="employee__slide">
-						<div class="employee__info">
-							<h3 class="employee__info--name">Voornaam <br /> Achternaam</h3>
-							<p class="employee__info--job">Functie</p>
-						</div>
-						<div class="employee__quote">
-							<p>"Bij mij draait alles om passie! passie voor sport en bewegen, passie voor vrijwillige inzet en passie voor communicatie en marketing."</p>
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:0640746651">06 40 74 66 51</a></p>
-							<p class="employee__contact--email"><a href="mailto:e.stadhouders@breda-actief.nl">e.stadhouders@breda-actief.nl</a></p>
-							<ul class="employee__contact--social">
-								<?php echo '<li class="mail"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>'; ?>
-								<?php echo '<li class="facebook"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>'; ?>
-								<?php echo '<li class="linkedin"><a href="#" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>'; ?>
-							</ul>
-						</div>
-					</div>
-				</article>
+				<?php endwhile; wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</section>
+	<?php endif; ?>
 	
 	@include('partials.content-contact-option')
 	
