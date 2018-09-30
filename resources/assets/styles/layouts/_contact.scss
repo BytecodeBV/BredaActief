@@ -134,12 +134,6 @@
   .intro {
     text-align: center;
 
-    .center {
-      article {
-        margin-top: -100px;
-      }
-    }
-
     @include breakpoint(for-tablet-landscape-up) {
       text-align: left;
     }
@@ -322,6 +316,7 @@
 
       &__info--job {
         font-style: italic;
+        font-size: 1.6rem;
         margin: 0;
       }
 
