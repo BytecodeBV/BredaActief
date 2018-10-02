@@ -65,6 +65,7 @@
 
   &--subtitle {
     font-size: 2.0rem;
+    line-height: 1.2;
     font-family: 'Karla', sans-serif;
     margin-bottom: 0;
   }
@@ -132,5 +133,64 @@
     background-image: url('../../../assets/images/slider_next.svg');
     margin-right: -40px;
     right: calc(50% - 7px);
+  }
+}
+
+.agenda__archive {
+  margin-bottom: 100px;
+
+  .center {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--row {
+    &.row-0 {
+      .agenda__archive--month {
+        background: $blue;
+      }
+    }
+
+    &.row-1 {
+      .agenda__archive--month {
+        background: $pink;
+      }
+    }
+
+    &.row-2 {
+      .agenda__archive--month {
+        background: $yellow;
+      }
+    }
+  }
+
+  &--month {
+    background: $blue;
+    border-radius: $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      color: $white;
+      font-family: $serif;
+      font-size: 6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+
+  &--month,
+  .agenda__event {
+    flex: 0 0 240px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .agenda__event {
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
   }
 }
