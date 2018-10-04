@@ -1,36 +1,23 @@
-.banner {
+.main {
   position: relative;
 
-  &::after {
+  &::before {
     @include breakpoint(for-tablet-landscape-up) {
       content: '';
       display: block;
       background: url('../../../assets/images/nav_shadow.png') no-repeat left center;
       background-size: contain;
-      width: 195px;
-      height: 286px;
+      width: 189px;
+      height: 220px;
       position: absolute;
-      top: 60px;
+      top: -1px;
       left: 0;
       z-index: 12;
     }
-
-    @include breakpoint(for-tablet-landscape-up) {
-      top: 50px;
-    }
-
-    @include breakpoint(for-desktop-up) {
-      top: 56px;
-    }
-
-    @include breakpoint(for-medium-desktop-up) {
-      top: 65px;
-    }
-
-    @include breakpoint(for-big-desktop-up) {
-      top: 66px;
-    }
   }
+}
+.banner {
+  position: relative;
 
   .logo {
     position: absolute;
