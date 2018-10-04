@@ -12,7 +12,7 @@ export default {
      */
 
     $('#mob-menu').mmenu({
-        extensions: ['pagedim-black', 'position-right'],
+      extensions: ['pagedim-black', 'position-right'],
     });
 
     var $icon = $("#mob-icon");
@@ -79,6 +79,56 @@ export default {
       ],
     });
 
+    var $settings = {
+      dots: false,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true,
+      mobileFirst: true,
+      centerMode: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 899,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            variableWidth: false,
+            centerMode: false,
+            arrows: true,
+          },
+        },
+        {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            variableWidth: false,
+            centerMode: false,
+            arrows: true,
+          },
+        },
+        {
+          breakpoint: 1499,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            variableWidth: false,
+            centerMode: false,
+            arrows: true,
+          },
+        },
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
+    }
+
+    $('.row-0 .agenda__archive--slider').slick($settings);
+    $('.row-1 .agenda__archive--slider').slick($settings);
+    $('.row-2 .agenda__archive--slider').slick($settings);
+
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
@@ -98,7 +148,6 @@ export default {
      */
 
     var blockTextFig = $('.page .block__text--figure');
-
     if(blockTextFig.length >= 1) {
       blockTextFig.parents('.flexible-block').addClass('padding-right');
       blockTextFig.parents('.flexible-block').prev().addClass('padding-right')
