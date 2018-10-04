@@ -141,6 +141,10 @@
   &--row {
     margin-bottom: 40px;
 
+    @include breakpoint(for-tablet-landscape-up) {
+      margin-bottom: 10px;
+    }
+
     &.row-0 {
       .agenda__archive--month {
         background: $blue;
