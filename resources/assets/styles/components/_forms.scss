@@ -1,6 +1,6 @@
 *:focus {
-  outline: none;
-}
+   outline: none;
+ }
 
 label {
   font-size: 3.1rem;
@@ -131,7 +131,7 @@ input[type="submit"] {
 
 .search-toggle {
   display: none;
-  
+
   @include breakpoint(for-phone-only) {
     display: block;
   }
@@ -170,4 +170,16 @@ input[type="submit"] {
       background: url('../../../assets/images/icon_loop.svg') no-repeat;
     }
   }
+}
+
+.wpcf7-not-valid,
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  border: 2px solid $red !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+span.wpcf7-not-valid-tip {
+  display: none;
 }
