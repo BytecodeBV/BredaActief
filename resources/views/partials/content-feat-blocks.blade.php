@@ -12,7 +12,7 @@
 				$post = $post_object;
 				setup_postdata( $post );
 				
-				$trimmed = wp_trim_words( get_the_content(), 17, '...' );
+				$trimmed = wp_trim_words( get_the_content(), 12, '...' );
 				?>
 				<article class="featured__item" style="background: {{ $block_color }}">
 					<figure class="featured__figure">
@@ -21,7 +21,7 @@
 						@endif
 					</figure>
 					<div class="featured__content--wrapper">
-						<h1 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h1>
+						<h3 class="featured__content--title"><span class="featured__content--inner">{{ get_the_title($post->ID) }}</span></h3>
 						<p class="featured__content--intro">{{ $trimmed }} <a class="featured__content--link" href="{{ get_the_permalink($post->ID) }}"><?php echo __('Lees meer >', $text_domain); ?></a></p>
 					</div>
 				</article>

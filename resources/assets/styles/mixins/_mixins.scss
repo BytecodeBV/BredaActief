@@ -19,7 +19,10 @@
 }
 
 @mixin breakpoint($point) {
-  @if $point == for-phone-only {
+  @if $point == for-phone-xs-only {
+    @media (max-width: 360px) { @content; }
+  }
+  @else if $point == for-phone-only {
     @media (max-width: 599px) { @content; }
   }
   @else if $point == for-tablet-portrait-up {

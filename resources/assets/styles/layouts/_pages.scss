@@ -1,6 +1,14 @@
 .page {
   .agenda {
-    padding: 100px 0 60px;
+    padding: 20px 0;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      padding: 40px 0;
+    }
+
+    @include breakpoint(for-tablet-landscape-up) {
+      padding: 100px 0 60px;
+    }
   }
 }
 .page-article {
@@ -29,9 +37,21 @@
   }
 
   .intro__article--content {
-    font-size: 3.1rem;
+    font-size: 2.7rem;
     line-height: 1.32;
     font-weight: normal;
+
+    @include breakpoint(for-phone-only) {
+      font-size: 2.4rem;
+    }
+
+    @include breakpoint(for-phone-xs-only) {
+      font-size: 2.1rem;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      font-size: 3.1rem;
+    }
   }
 }
 

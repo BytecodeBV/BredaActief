@@ -60,7 +60,15 @@
   }
 
   .contact__header--subtitle {
-    font-size: 3.1rem;
+    font-size: 2.3rem;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 2.7rem;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      font-size: 3.1rem;
+    }
   }
 
   form {
@@ -70,6 +78,15 @@
 
   label {
     margin: 0;
+    font-size: 2.3rem;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 2.8rem;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      font-size: 3.1rem;
+    }
   }
 
   .field-wrapper {

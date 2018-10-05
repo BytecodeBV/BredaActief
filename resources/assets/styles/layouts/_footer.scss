@@ -8,7 +8,7 @@
 .footer {
   height: auto;
 
-  @include breakpoint(for-tablet-landscape-up) {
+  @include breakpoint(for-desktop-up) {
     height: 468px;
   }
 }
@@ -29,7 +29,8 @@
     align-items: center;
     text-align: center;
 
-    @include breakpoint(for-tablet-landscape-up) {
+    @include breakpoint(for-tablet-portrait-up) {
+      flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
@@ -38,7 +39,11 @@
   }
 
   h5 {
-    margin-bottom: 20px;
+    font-size: 2.45rem;
+    margin-bottom: 0.8em;
+    text-transform: uppercase;
+    font-family: $serif;
+    font-weight: bold;
   }
 
   ul {
@@ -48,19 +53,28 @@
   }
 
   .widget {
-    flex: 0 1 280px;
     align-items: flex-start;
     flex-basis: auto;
-    font-size: 2.45rem;
-    line-height: 1.5;
     margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 2.45rem;
+      flex: 1 1 400px;
+    }
 
     @include breakpoint(for-tablet-landscape-up) {
+      text-align: left;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      font-size: 2rem;
       flex: 0 1 280px;
     }
 
-    h5 {
-        font-size: 2.45rem;
+    @include breakpoint(for-medium-desktop-up) {
+      font-size: 2.45rem;
     }
 
     &:last-child {
@@ -82,7 +96,7 @@
 
     li {
       display: inline-block;
-      padding: 0 5px 0 0;
+      padding: 0 10px 0 0;
 
       a {
         display: block;

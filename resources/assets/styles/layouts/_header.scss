@@ -25,6 +25,11 @@
     display: block;
     bottom: 6px;
     left: 10px;
+    transition: opacity 0.4s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     @include breakpoint(for-tablet-landscape-up) {
       top: 130px;
@@ -86,6 +91,8 @@
     color: $white;
     position: relative;
     padding: 0 0 0 40px;
+    font-size: 1.6rem;
+    font-weight: bold;
 
     @include breakpoint(for-phone-only) {
       margin: 0;
@@ -192,7 +199,6 @@
 }
 
 .header-visual {
-  height: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -200,6 +206,14 @@
   z-index: 1;
   display: block;
   margin: 0;
+
+  @include breakpoint(for-phone-only) {
+    height: 200px;
+  }
+
+  @include breakpoint(for-phone-xs-only) {
+    height: 175px;
+  }
 
   @include breakpoint(for-tablet-portrait-up) {
     height: 400px;
@@ -232,43 +246,56 @@
     z-index: 2;
     background-image: url('../../../assets/images/header_overlay.png');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: left top;
+
+
+    @include breakpoint(for-tablet-portrait-up) {
+      background-size: contain;
+      background-position: 1px top;
+    }
   }
 
   &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background: url('../../../assets/images/header_overlay_bottom.png') no-repeat left bottom;
-    background-size: contain;
-    z-index: 3;
+    @include breakpoint(for-tablet-portrait-up) {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: url('../../../assets/images/header_overlay_bottom.png') no-repeat left bottom;
+      background-size: contain;
+      z-index: 3;
+    }
   }
 
   &--title {
     h1 {
       @include title;
-
-      font-size: 2.76rem;
-      line-height: 1;
+      line-height: 1.1;
       color: $white;
       position: absolute;
       z-index: 5;
       margin: 0;
       left: 5%;
-      bottom: 40%;
+      bottom: 20px;
 
-      @include breakpoint(for-tablet-portrait-up) {
-        font-size: 6.76rem;
+      @include breakpoint(for-phone-only) {
+        font-size: 3.76rem;
       }
 
+      @include breakpoint(for-phone-xs-only) {
+        font-size: 2.76rem;
+      }
+
+      @include breakpoint(for-tablet-portrait-up) {
+        bottom: 30%;
+        font-size: 5.76rem;
+      }
 
       @include breakpoint(for-tablet-landscape-up) {
-        bottom: 30%;
         font-size: 8.76rem;
       }
 
