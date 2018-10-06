@@ -167,8 +167,11 @@
       }
 
       li {
+        margin-bottom: 20px;
+
         @include breakpoint(for-tablet-landscape-up) {
           flex: 1 1 255px;
+          margin-bottom: 0;
         }
       }
     }

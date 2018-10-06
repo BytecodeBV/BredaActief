@@ -7,7 +7,7 @@
   @include('partials.header-visual')
   
   <div class="search__wrapper">
-    <div class="search__page-header">
+    <div id="scroll-to" class="search__page-header">
       <div class="center">
         <h1>{{ __('Zoekresultaten', $text_domain) }}</h1>
         <p class="search__value">{{ __('U zocht naar: ', $text_domain) }}<strong>{!! get_query_var('s') !!}</strong> </p>

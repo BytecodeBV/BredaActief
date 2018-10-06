@@ -3,6 +3,7 @@
   text-transform: uppercase;
   font-weight: bold;
   color: $blue;
+  word-break: break-word;
 }
 
 @mixin image {

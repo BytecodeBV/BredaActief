@@ -70,3 +70,10 @@
     display: block;
   }
 }
+
+.search .header-visual,
+.archive .header-visual {
+  @include breakpoint(for-phone-only) {
+    margin-bottom: 60px;
+  }
+}
