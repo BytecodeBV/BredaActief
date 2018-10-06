@@ -1,18 +1,5 @@
 .show__all {
   @include link;
-
-  padding-right: 40px;
-  color: $white;
-  background-image: url("../../../assets/images/arrow_right.svg");
-  background-repeat: no-repeat;
-  background-size: 22px 22px;
-  background-position: 95% center;
-  transition: all 0.3s linear;
-
-  &:hover {
-    background-position: 100% center;
-  }
-
 }
 
 .news {
@@ -129,7 +116,6 @@
 
   &__item--img {
     width: 100%;
-    margin-bottom: 20px;
     border-radius: $border-radius;
     overflow: hidden;
 
@@ -259,8 +245,11 @@ News page
       padding: 6%;
       background: $white;
       border-radius: 20px;
+      display: flex;
+      flex-direction: row;
 
       @include breakpoint(for-phone-only) {
+        flex-direction: column;
         padding: 40px;
       }
 
@@ -270,15 +259,6 @@ News page
 
       * {
         color: $blackLight;
-      }
-
-      a {
-        display: flex;
-        flex-direction: row;
-
-        @include breakpoint(for-phone-only) {
-          flex-direction: column;
-        }
       }
 
       &--title {
@@ -296,9 +276,11 @@ News page
 
       &--img {
         position: static;
+        margin-bottom: 30px;
 
-        @include breakpoint(for-tablet-potrait-up) {
+        @include breakpoint(for-tablet-portrait-up) {
           flex: 0 1 290px;
+          margin-bottom: 0;
         }
 
         img {

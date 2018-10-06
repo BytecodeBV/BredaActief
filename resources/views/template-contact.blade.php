@@ -15,7 +15,7 @@
 	@include('partials.header-visual')
 	@while(have_posts()) @php the_post() @endphp
 	
-	<section class="intro">
+	<section id="scroll-to" class="intro">
 		<div class="center center-small">
 			<article @php post_class() @endphp>
 				<header><h2 class="entry-title"><?php echo $contact_header; ?></h2></header>

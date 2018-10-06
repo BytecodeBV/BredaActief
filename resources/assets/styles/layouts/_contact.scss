@@ -130,7 +130,7 @@
     }
   }
 
-  .reverse {
+  &.reverse {
     .contact__col--left {
       @include breakpoint(for-tablet-landscape-up) {
         padding-right: 0;

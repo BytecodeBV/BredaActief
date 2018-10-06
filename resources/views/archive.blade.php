@@ -5,7 +5,7 @@
 @section('content')
 	@include('partials.header-visual')
 	
-	<div class="archive__page-header">
+	<div id="scroll-to" class="archive__page-header">
 		<div class="center">
 			<h1>Aankomende <br />activiteiten</h1>
 		</div>
@@ -69,4 +69,33 @@
 		}
 		?>
 	</section>
+	
+	<?php
+	$more_block = get_field('more_block', 'option');
+	
+	if( $more_block ): ?>
+	<section class="more__block text__color--light">
+		<div class="center center-small">
+			<article class="more__block--article">
+				<header class="more__block--header">
+					<p class="more__block--subtitle"><?php echo $more_block['more_subtitle']; ?></p>
+					<h2 class="more__block--title"><?php echo $more_block['more_title']; ?></h2>
+				</header>
+				<?php
+				$post_object = $more_block['more_page'];
+				
+				if($post_object) :
+				
+				$post = $post_object;
+				setup_postdata($post);
+				?>
+				<div class="more__block--excerpt">
+					<p><?php echo wp_trim_words( get_the_content(), 20, '...' ); ?></p>
+					<p class="group"><a class="show__all more__block--link right" href="{{ the_permalink() }}"><?php echo __('Meer informatie', $text_domain ); ?></a></p>
+				</div>
+				<?php wp_reset_postdata(); endif; ?>
+			</article>
+		</div>
+	</section>
+	<?php endif; ?>
 @endsection

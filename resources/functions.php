@@ -128,11 +128,17 @@ add_theme_support( 'post-thumbnails' );
  */
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
+		'page_title' 	=> 'Theme settings',
+		'menu_title'	=> 'Theme settings',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+		'redirect'		=> true
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Agenda',
+		'menu_title'	=> 'Agenda',
+		'parent_slug'	=> 'theme-general-settings',
 	));
 	
 	acf_add_options_sub_page(array(
@@ -228,9 +234,9 @@ function render_text_block() {
 	$text_color = get_sub_field('text_color');
 	
 	$html = '';
-	$html .= '<section class="flexible-block block__text text__color--'.$text_color.'">';
+	$html .= '<section class="flexible-block block__text text__color--dark">';
 	$html .= '<div class="center center-small group">';
-	if(!empty($image)) :
+	if(!empty($image_id)) :
 		$html .= '<figure class="block__text--figure"><img src="'.$image_url[0].'" alt="'.get_the_title($image_id).'"></figure>';
 	endif;
 	$html .= '<article class="block__text--article page-article">';

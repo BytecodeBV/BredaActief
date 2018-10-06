@@ -27,7 +27,7 @@ $page_id = get_option('page_for_posts');
 	@endphp
 	
 	@if($searchQuery->have_posts())
-		<section class="news">
+		<section class="news" id="scroll-to">
 			<div class="center">
 				<header class="news__header">
 					<h2>{{ get_the_title($page_id) }}</h2>

@@ -134,6 +134,18 @@ export default {
     // JavaScript to be fired on all pages, after page specific JS is fired
 
     /**
+     * Scroll to hash
+     */
+
+    $(document).on('click', 'a[href^="#"]', function (event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 500);
+    });
+
+    /**
      * Search mobile
      */
 
