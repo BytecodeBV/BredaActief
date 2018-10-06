@@ -33,13 +33,19 @@
   z-index: 2;
 
   @include breakpoint(for-desktop-up) {
-    padding: 0 0 180px;
+    padding: 0 0 100px;
   }
 
   .intro__article--content {
     font-size: 2.7rem;
     line-height: 1.32;
     font-weight: normal;
+
+    p,
+    ol,
+    ul {
+      margin-bottom: 3rem;
+    }
 
     @include breakpoint(for-phone-only) {
       font-size: 2.4rem;
