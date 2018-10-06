@@ -185,10 +185,6 @@ News page
 
 .blog {
   .header-visual {
-    &::before {
-      background-image: url('../../../assets/images/header_overlay_red.png');
-    }
-
     &::after {
       background-image: url('../../../assets/images/header_overlay_bottom_blue.png');
     }

@@ -11,6 +11,7 @@ else :
 endif;
 
 $header_visual_id = get_field('header_visual', $page_id)['ID'];
+$header_overlay_color = get_field('header_visual_overlay_color', $page_id);
 
 if (!empty($header_visual_id)) {
 	$header_visual_url = wp_get_attachment_image_url($header_visual_id, 'image-header');
@@ -21,7 +22,7 @@ if (!empty($header_visual_id)) {
 $header_title = get_field('header_visual_title', $page_id);
 ?>
 
-<figure class="header-visual" style="background-image: url('<?php echo $header_visual_url; ?>');">
+<figure class="header-visual <?php echo !empty($header_overlay_color) ? $header_overlay_color : ''; ?>" style="background-image: url('<?php echo $header_visual_url; ?>');">
 	@if(!empty($header_title))
 	<div class="header-visual--title">
 		<h1>{!! $header_title !!}</h1>
