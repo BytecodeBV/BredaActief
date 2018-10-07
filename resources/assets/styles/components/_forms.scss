@@ -109,7 +109,7 @@ input[type="submit"] {
   }
 
   .search-submit {
-    background: url('../../../assets/images/icon_loop.svg') no-repeat;
+    background: url('../images/icon_loop.svg') no-repeat;
     width: 24px;
     height: 24px;
     border: none;
@@ -164,10 +164,10 @@ input[type="submit"] {
   .search-submit {
     opacity: 1;
     visibility: visible;
-    background: url('../../../assets/images/icon_loop_white.svg') no-repeat;
+    background: url('../images/icon_loop_white.svg') no-repeat;
 
     @include breakpoint(for-phone-only) {
-      background: url('../../../assets/images/icon_loop.svg') no-repeat;
+      background: url('../images/icon_loop.svg') no-repeat;
     }
   }
 }

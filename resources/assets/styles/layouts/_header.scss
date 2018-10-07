@@ -5,7 +5,7 @@
     @include breakpoint(for-tablet-landscape-up) {
       content: '';
       display: block;
-      background: url('../../../assets/images/nav_shadow.png') no-repeat left center;
+      background: url('../images/nav_shadow.png') no-repeat left center;
       background-size: contain;
       width: 189px;
       height: 220px;
@@ -120,7 +120,7 @@
     &-read {
       &::before {
         top: calc(50% - 12px);
-        background: url('../../../assets/images/icon_read.svg') no-repeat;
+        background: url('../images/icon_read.svg') no-repeat;
       }
     }
 
@@ -130,7 +130,7 @@
         margin-top: -2px;
       }
       &::before {
-        background: url('../../../assets/images/icon_contrast.svg') no-repeat;
+        background: url('../images/icon_contrast.svg') no-repeat;
       }
     }
 
@@ -141,7 +141,7 @@
 
       &::before {
         top: calc(50% - 11px);
-        background: url('../../../assets/images/icon_fontsize.svg') no-repeat;
+        background: url('../images/icon_fontsize.svg') no-repeat;
       }
     }
 
@@ -244,7 +244,7 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background-image: url('../../../assets/images/header_overlay_blue.png');
+    background-image: url('../images/header_overlay_blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left top;
@@ -265,7 +265,7 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      background: url('../../../assets/images/header_overlay_bottom.png') no-repeat left bottom;
+      background: url('../images/header_overlay_bottom.png') no-repeat left bottom;
       background-size: contain;
       z-index: 3;
     }
@@ -355,13 +355,13 @@
 
   &.yellow {
     &::before {
-      background-image: url('../../../assets/images/header_overlay_yellow.png');
+      background-image: url('../images/header_overlay_yellow.png');
     }
   }
 
   &.red {
     &::before {
-      background-image: url('../../../assets/images/header_overlay_red.png');
+      background-image: url('../images/header_overlay_red.png');
     }
   }
 }

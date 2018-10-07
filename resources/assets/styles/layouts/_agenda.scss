@@ -10,7 +10,7 @@
       position: absolute;
       right: 0;
       bottom: 20px;
-      background-image: url('../../../assets/images/arrow_right_blue.svg');
+      background-image: url('../images/arrow_right_blue.svg');
 
       @include breakpoint(for-tablet-portrait-up) {
         bottom: 40px;
@@ -137,14 +137,14 @@
 }
 
 .slick-prev {
-  background-image: url('../../../assets/images/slider_prev.svg');
+  background-image: url('../images/slider_prev.svg');
   margin-left: -40px;
   left: calc(50% - 7px);
 
 }
 
 .slick-next {
-  background-image: url('../../../assets/images/slider_next.svg');
+  background-image: url('../images/slider_next.svg');
   margin-right: -40px;
   right: calc(50% - 7px);
 }
