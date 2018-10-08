@@ -27,10 +27,14 @@
 .intro {
   color: $blue;
   margin: 0 auto;
-  padding: 60px 0 80px;
+  padding: 40px 0;
   background: $white;
   position: relative;
   z-index: 2;
+
+  @include breakpoint(for-tablet-landscape-up) {
+    padding: 60px 0 80px;
+  }
 
   @include breakpoint(for-desktop-up) {
     padding: 0 0 100px;

@@ -1,6 +1,14 @@
 .flexible-block {
   .center {
-    padding: 120px 0;
+    padding: 60px 0;
+
+    @include breakpoint(for-tablet-landscape-up) {
+      padding: 90px 0;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      padding: 120px 0;
+    }
   }
 
 

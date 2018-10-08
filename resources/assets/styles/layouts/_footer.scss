@@ -16,8 +16,12 @@
 // end sticky footer
 
 .footer {
-  padding: 100px 0;
+  padding: 60px 0;
   background: $red;
+
+  @include breakpoint(for-tablet-landscape-up) {
+    padding: 100px 0;
+  }
 
   * {
     color: $white;

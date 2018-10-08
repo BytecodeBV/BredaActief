@@ -321,11 +321,15 @@ News page
   line-height: 1.53;
   font-weight: bold;
   width: 100%;
-  padding-bottom: 80px;
 
   .nav-links {
     width: 100%;
     text-align: center;
+    padding-bottom: 80px;
+
+    @include breakpoint(for-phone-only) {
+      padding-bottom: 40px;
+    }
   }
 
   .page-numbers {
