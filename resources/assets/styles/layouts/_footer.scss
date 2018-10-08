@@ -39,11 +39,15 @@
   }
 
   h5 {
-    font-size: 2.45rem;
+    font-size: 2rem;
     margin-bottom: 0.8em;
     text-transform: uppercase;
     font-family: $serif;
     font-weight: bold;
+
+    @include breakpoint(for-desktop-up) {
+      font-size: 2.45rem;
+    }
   }
 
   ul {
@@ -57,7 +61,7 @@
     flex-basis: auto;
     margin-bottom: 40px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     @include breakpoint(for-tablet-portrait-up) {
       font-size: 2.45rem;
@@ -75,6 +79,13 @@
 
     @include breakpoint(for-medium-desktop-up) {
       font-size: 2.45rem;
+    }
+
+    a {
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
     }
 
     &:last-child {
@@ -108,7 +119,6 @@
       width: 36px;
       height: 36px;
 
-
       @include breakpoint(for-desktop-up) {
         width: 40px;
         height: 40px;
@@ -117,6 +127,26 @@
       @include breakpoint(for-medium-desktop-up) {
         width: 45px;
         height: 45px;
+      }
+
+      circle,
+      path,
+      rect {
+        transition: fill 0.3s linear;
+      }
+
+      &:hover {
+        circle {
+          fill: $blue;
+        }
+
+        path {
+          fill: $white;
+        }
+
+        rect {
+          fill: $white;
+        }
       }
     }
   }

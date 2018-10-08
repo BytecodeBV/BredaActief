@@ -94,7 +94,9 @@ input[type="submit"] {
     color: $blue;
     border-radius: $border-radius;
     margin: 0 10px 0 40px;
-    padding: 5px 15px;
+    padding: 0 15px;
+    line-height: 36px;
+    height: 36px;
 
     @include breakpoint(for-phone-only) {
       border-color: $red;

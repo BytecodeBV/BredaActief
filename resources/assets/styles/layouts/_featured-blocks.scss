@@ -135,7 +135,7 @@
 }
 
 .featured__content--link {
-  font-size: 2.7rem;
+  font-size: 2.4rem;
   line-height: 1.07;
   color: $white;
   text-decoration: underline;
@@ -145,6 +145,14 @@
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.3s ease;
+
+  @include breakpoint(for-phone-only) {
+    font-size: 2.2rem;
+  }
+
+  @include breakpoint(for-medium-desktop-only) {
+    font-size: 2.7rem;
+  }
 }
 
 .featured__item {

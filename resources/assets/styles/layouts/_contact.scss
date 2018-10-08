@@ -66,7 +66,7 @@
       font-size: 2.7rem;
     }
 
-    @include breakpoint(for-desktop-up) {
+    @include breakpoint(for-medium-desktop-up) {
       font-size: 3.1rem;
     }
   }
@@ -84,7 +84,7 @@
       font-size: 2.8rem;
     }
 
-    @include breakpoint(for-desktop-up) {
+    @include breakpoint(for-medium-desktop-up) {
       font-size: 3.1rem;
     }
   }
@@ -382,25 +382,31 @@
               height: 30px;
               display: block;
 
-              .cls-1,
-              .cls-2 {
+              circle,
+              path {
                 transition: fill 0.3s ease;
               }
 
-              .cls-1 {
+              .cls-1,
+              circle {
                 fill: $blue;
               }
-              .cls-2 {
+
+              .cls-2,
+              path {
                 fill: $white;
               }
             }
 
             &:hover {
               svg {
-                .cls-1 {
+                .cls-1,
+                circle {
                   fill: $white;
                 }
-                .cls-2 {
+
+                .cls-2,
+                path {
                   fill: $blue;
                 }
               }

@@ -129,6 +129,8 @@
 
     img {
       @include image;
+
+      border-radius: $border-radius;
       transition: all 0.3s linear;
     }
   }
@@ -219,6 +221,10 @@ News page
         @media (max-width: 700px) {
           font-size: 3.68rem;
         }
+
+        @include breakpoint(for-medium-desktop-up) {
+          max-width: 700px;
+        }
       }
 
       .search-form {
@@ -265,7 +271,7 @@ News page
           font-size: 3rem;
         }
 
-        @include breakpoint(for-desktop-up) {
+        @include breakpoint(for-medium-desktop-up) {
           font-size: 3.4rem;
         }
       }
