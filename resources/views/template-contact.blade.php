@@ -64,27 +64,29 @@
 							<h3 class="employee__info--name">{{ $first_name }} <br /> {{ $last_name }}</h3>
 							<p class="employee__info--job">{{ $job_title }}</p>
 						</div>
-						<div class="employee__quote">
-							{{ the_content() }}
-						</div>
-						<div class="employee__contact">
-							<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
-							<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
-							<ul class="employee__contact--social">
-								<?php
-									if(!empty($email)):
-										echo '<li class="mail"><a href="{{ $email }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>';
-									endif;
-								
-									if(!empty($facebook)):
-										echo '<li class="facebook"><a href="{{ $facebook }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>';
-									endif;
+						<div class="employee__slide--out">
+							<div class="employee__quote">
+								{{ the_content() }}
+							</div>
+							<div class="employee__contact">
+								<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
+								<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
+								<ul class="employee__contact--social">
+									<?php
+										if(!empty($email)):
+											echo '<li class="mail"><a href="{{ $email }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg').'</a></li>';
+										endif;
 									
-									if(!empty($linkedin)):
-										echo '<li class="linkedin"><a href="{{ $linkedin }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>';
-									endif;
-								 ?>
-							</ul>
+										if(!empty($facebook)):
+											echo '<li class="facebook"><a href="{{ $facebook }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg').'</a></li>';
+										endif;
+										
+										if(!empty($linkedin)):
+											echo '<li class="linkedin"><a href="{{ $linkedin }}" target="_blank">'.file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg').'</a></li>';
+										endif;
+									 ?>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</article>

@@ -303,10 +303,14 @@
       &__slide {
         padding: 15px 18px;
         background: $red;
-        max-height: 125px;
-        transition: max-height 0.5s linear;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
+        cursor: pointer;
+        transition: background 0.5s linear;
+
+        &:hover {
+          background: lighten($red, 3%);
+        }
       }
 
       &__info {
@@ -340,18 +344,12 @@
         margin: 0;
       }
 
-      &__quote,
-      &__contact {
-        transition: opacity 0.4s linear;
-      }
-
       &__quote {
         margin-top: 12px;
         padding: 15px 0;
         font-size: 1.5rem;
         border-top: 1px solid $white;
         border-bottom: 1px solid $white;
-        opacity: 0;
 
         p {
           margin: 0;
@@ -361,7 +359,6 @@
       &__contact {
         padding: 15px 0;
         font-size: 1.5rem;
-        opacity: 0;
 
         &--phone {
           margin: 0;
@@ -415,15 +412,17 @@
         }
       }
 
-      &:hover {
-        .employee__slide {
-          max-height: 100%;
-          height: auto;
-        }
+      &__slide--out {
+        display: none;
+      }
 
-        .employee__quote,
-        .employee__contact {
-          opacity: 1;
+      &__slide {
+        &.open {
+          .employee__info {
+            &::after {
+              background-image: url('../images/icon_close.svg');
+            }
+          }
         }
       }
     }

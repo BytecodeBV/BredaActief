@@ -164,5 +164,15 @@ export default {
       blockTextFig.parents('.flexible-block').addClass('padding-right');
       blockTextFig.parents('.flexible-block').prev().addClass('padding-right')
     }
+
+    /**
+     * Employee blocks slide toggle
+     */
+
+    $( '.employee__slide' ).click(function() {
+      $(this).find( '.employee__slide--out' ).slideToggle( 400, function() {
+        $(this).parents('.employee__slide').toggleClass('open');
+      });
+    });
   },
 };
