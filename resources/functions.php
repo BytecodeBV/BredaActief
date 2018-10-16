@@ -247,3 +247,74 @@ function render_text_block() {
 	
 	return $html;
 }
+
+function breda_actief_cpts() {
+	
+	/**
+	 * Post Type: Events.
+	 */
+	
+	$labels = array(
+		"name" => __( "Events", "breda-actief" ),
+		"singular_name" => __( "Event", "breda-actief" ),
+	);
+	
+	$args = array(
+		"label" => __( "Events", "breda-actief" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "agenda", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-calendar",
+		"supports" => array( "title", "editor", "thumbnail" ),
+	);
+	
+	register_post_type( "agenda", $args );
+	
+	/**
+	 * Post Type: Medewerkers.
+	 */
+	
+	$labels = array(
+		"name" => __( "Medewerkers", "breda-actief" ),
+		"singular_name" => __( "Medewerker", "breda-actief" ),
+	);
+	
+	$args = array(
+		"label" => __( "Medewerkers", "breda-actief" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "employee", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-admin-users",
+		"supports" => array( "title", "editor", "thumbnail" ),
+	);
+	
+	register_post_type( "employee", $args );
+}
+
+add_action( 'init', 'breda_actief_cpts' );
