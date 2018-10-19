@@ -1,4 +1,4 @@
-<?php
+@php
 $trimmed = '';
 
 if( is_front_page() ) {
@@ -9,7 +9,7 @@ if( is_front_page() ) {
 
 $post_thumb_id = get_post_thumbnail_id();
 $post_thumb = wp_get_attachment_image($post_thumb_id, 'image-feat');
-?>
+@endphp
 <article class="news__item">
 	<figure class="news__item--img">
 		<a href="{{ the_permalink() }}">{!! $post_thumb !!}</a>
