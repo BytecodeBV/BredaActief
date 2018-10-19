@@ -1,4 +1,4 @@
-<?php
+@php
 if( have_rows('content_blokken') ):
 	
 	while ( have_rows('content_blokken') ) : the_row();
@@ -21,4 +21,4 @@ if( have_rows('content_blokken') ):
 else :
 	// no layouts found
 endif;
-?>
+@endphp
