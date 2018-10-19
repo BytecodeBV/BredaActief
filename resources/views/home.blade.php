@@ -1,8 +1,7 @@
-<?php
+@php
 global $text_domain;
 $page_id = get_option('page_for_posts');
-
-?>
+@endphp
 
 @extends('layouts.app')
 
@@ -34,12 +33,11 @@ $page_id = get_option('page_for_posts');
 					@include('partials.searchform-news')
 				</header>
 				<div class="news__item-wrapper">
-					<?php while($searchQuery->have_posts()) : $searchQuery->the_post(); ?>
+					@while($searchQuery->have_posts()) @php($searchQuery->the_post())
 					@include('partials.content-news')
-					<?php endwhile; ?>
+					@endwhile
 					<div class="pagination">
-						<?php
-						echo paginate_links( array(
+						{!! paginate_links( array(
 							'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
 							'total'        => $searchQuery->max_num_pages,
 							'current'      => max( 1, get_query_var( 'paged' ) ),
@@ -53,12 +51,11 @@ $page_id = get_option('page_for_posts');
 							'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
 							'add_args'     => false,
 							'add_fragment' => '',
-						) );
-						?>
+						)) !!}
 					</div>
 				</div>
 			</div>
 		</section>
-		@php wp_reset_postdata(); @endphp
+		@php(wp_reset_postdata())
 	@endif
 @endsection
