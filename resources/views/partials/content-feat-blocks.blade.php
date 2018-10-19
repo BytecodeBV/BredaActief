@@ -2,18 +2,18 @@
 	<section class="featured">
 		<div class="center">
 			@while (have_rows('feat_blocks')) @php(the_row())
-			<?php
+			@php
 			$block_color = get_sub_field('block_color');
 			$post_object = get_sub_field('block');
-			?>
+			@endphp
 			@if( $post_object )
-				<?php
+				@php
 				// override $post
 				$post = $post_object;
 				setup_postdata( $post );
 				
 				$trimmed = wp_trim_words( get_the_content(), 12, '...' );
-				?>
+				@endphp
 				<article class="featured__item" style="background: {{ $block_color }}">
 					<figure class="featured__figure">
 						@if ( has_post_thumbnail( $post->ID ))
