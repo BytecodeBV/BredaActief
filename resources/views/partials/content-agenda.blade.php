@@ -1,4 +1,5 @@
-<?php
+@php
+global $text_domain;
 $today = date('Ymd');
 $args_events = array(
 	'post_type' => 'agenda',
@@ -18,24 +19,22 @@ $args_events = array(
 );
 
 $events = new WP_Query($args_events);
-?>
+@endphp
 
 @if( $events->have_posts())
 <section class="agenda">
 	<header class="agenda__header">
 		<div class="center">
-			<h2><?php echo __('Agenda', $text_domain); ?></h2>
+			<h2>{!! __('Agenda', $text_domain) !!}</h2>
 		</div>
 	</header>
 	<div class="slider">
 		@while($events->have_posts() ) @php $events->the_post() @endphp
-	
 			@include('partials.content-agenda-block')
-		
 		@endwhile
 	</div>
 	<div class="center">
-		<a class="show__all" href="#"><?php echo __('Bekijk alles', $text_domain); ?></a>
+		<a class="show__all" href="#">{!! __('Bekijk alles', $text_domain) !!}</a>
 	</div>
 </section>
 @php wp_reset_postdata() @endphp
