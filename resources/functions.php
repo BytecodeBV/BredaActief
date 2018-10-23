@@ -106,8 +106,12 @@ add_image_size('image-banner', 1920, 713, true);
 add_image_size('image-banner-m', 1280, 475, true);
 add_image_size('image-banner-s', 600, 223, true);
 add_image_size('image-feat', 650, 650, true);
-add_image_size('image-feat-s', 360, 360, true);
+add_image_size('image-feat-s', 430, 430, true);
 add_image_size('image-half-block', 600, 750, true);
+add_image_size('image-content-block', 490);
+add_image_size('image-content-banner', 1920, 630, true);
+add_image_size('image-content-banner-m', 1400, 460, true);
+add_image_size('image-content-banner-s', 600, 200, true);
 
 /**
  * Add excerpts to pages
@@ -124,11 +128,17 @@ add_theme_support( 'post-thumbnails' );
  */
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
+		'page_title' 	=> 'Theme settings',
+		'menu_title'	=> 'Theme settings',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+		'redirect'		=> true
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Agenda',
+		'menu_title'	=> 'Agenda',
+		'parent_slug'	=> 'theme-general-settings',
 	));
 	
 	acf_add_options_sub_page(array(
@@ -193,3 +203,118 @@ function social_shortcode($atts, $content = null){
 	return $social;
 }
 add_shortcode( 'social', 'social_shortcode' );
+
+function render_text_block_bg() {
+	$text_block = get_sub_field('text_block');
+	$bg_color = get_sub_field('bg_color');
+	$banner_img_id = get_sub_field('banner_image')['ID'];
+	$banner_img = wp_get_attachment_image_src($banner_img_id, 'image-content-banner');
+	
+	$text_color = get_sub_field('text_color');
+	
+	$html = '';
+	$html .= '<section class="flexible-block block__text--bg text__color--'.$text_color.'" style="background-color: '.$bg_color.'">';
+	if( !empty($banner_img)) :
+		$html .= '<figure class="block__text--banner"><img src="'.$banner_img[0].'" alt=".get_the_title($banner_img_id)."></figure>';
+	endif;
+	$html .= '<article class="block__text--article page-article">';
+	$html .= '<div class="center center-small">';
+	$html .= $text_block;
+	$html .= '</div>';
+	$html .= '</article>';
+	$html .= '</section>';
+	
+	return $html;
+}
+
+function render_text_block() {
+	$text_block = get_sub_field('text_block');
+	$image_id = get_sub_field('image')['ID'];
+	$image_url = wp_get_attachment_image_src($image_id, 'image-content-block');
+	$text_color = get_sub_field('text_color');
+	
+	$html = '';
+	$html .= '<section class="flexible-block block__text text__color--dark">';
+	$html .= '<div class="center center-small group">';
+	if(!empty($image_id)) :
+		$html .= '<figure class="block__text--figure"><img src="'.$image_url[0].'" alt="'.get_the_title($image_id).'"></figure>';
+	endif;
+	$html .= '<article class="block__text--article page-article">';
+	$html .= $text_block;
+	$html .= '</article>';
+	$html .= '</div>';
+	$html .= '</section>';
+	
+	return $html;
+}
+
+function breda_actief_cpts() {
+	
+	/**
+	 * Post Type: Events.
+	 */
+	
+	$labels = array(
+		"name" => __( "Events", "breda-actief" ),
+		"singular_name" => __( "Event", "breda-actief" ),
+	);
+	
+	$args = array(
+		"label" => __( "Events", "breda-actief" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "agenda", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-calendar",
+		"supports" => array( "title", "editor", "thumbnail" ),
+	);
+	
+	register_post_type( "agenda", $args );
+	
+	/**
+	 * Post Type: Medewerkers.
+	 */
+	
+	$labels = array(
+		"name" => __( "Medewerkers", "breda-actief" ),
+		"singular_name" => __( "Medewerker", "breda-actief" ),
+	);
+	
+	$args = array(
+		"label" => __( "Medewerkers", "breda-actief" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "employee", "with_front" => true ),
+		"query_var" => true,
+		"menu_icon" => "dashicons-admin-users",
+		"supports" => array( "title", "editor", "thumbnail" ),
+	);
+	
+	register_post_type( "employee", $args );
+}
+
+add_action( 'init', 'breda_actief_cpts' );

@@ -2,9 +2,15 @@
 @import "~bootstrap/scss/functions";
 
 /** colors */
-$color-blue: #5bc2e7;
-$color-white: #fff;
-$color-red: #f23030;
+$blue: #5bc2e7;
+$white: #fff;
+$red: #f23030;
+$gray: #eaeaea;
+$blackLight: #1d1d1b;
+$yellow: #eaaf10;
+$pink: #f089b1;
+
+
 
 /** typography */
 $sans-serif: 'Karla', sans-serif;
@@ -14,3 +20,5 @@ $serif: 'Arvo', serif;
 $normal: 400;
 $bold: 700;
 
+/** border radius */
+$border-radius: 20px;

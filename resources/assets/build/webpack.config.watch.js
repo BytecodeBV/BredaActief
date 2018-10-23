@@ -35,7 +35,7 @@ module.exports = {
       advanced: {
         browserSync: {
           open: false,
-          browser: ["google chrome"]
+          browser: ['google chrome'],
         },
       },
     }),

@@ -1,24 +1,66 @@
-.home {
-  .intro {
-    color: $blue;
-    margin: 0 auto;
+.page {
+  .agenda {
+    padding: 20px 0;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      padding: 40px 0;
+    }
+
+    @include breakpoint(for-tablet-landscape-up) {
+      padding: 100px 0 60px;
+    }
+  }
+}
+.page-article {
+  p {
+    a {
+      text-decoration: underline;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}
+
+.intro {
+  color: $blue;
+  margin: 0 auto;
+  padding: 40px 0;
+  background: $white;
+  position: relative;
+  z-index: 2;
+
+  @include breakpoint(for-tablet-landscape-up) {
     padding: 60px 0 80px;
-    background: #fff;
-    position: relative;
-    z-index: 2;
+  }
 
-    @include breakpoint(for-desktop-up) {
-      padding: 0 0 180px;
+  @include breakpoint(for-desktop-up) {
+    padding: 0 0 100px;
+  }
+
+  .intro__article--content {
+    font-size: 2.7rem;
+    line-height: 1.32;
+    font-weight: normal;
+
+    p,
+    ol,
+    ul {
+      margin-bottom: 3rem;
     }
 
-    .center {
-      max-width: 980px;
+    @include breakpoint(for-phone-only) {
+      font-size: 2.2rem;
     }
 
-    .intro__article--content {
+    @include breakpoint(for-phone-xs-only) {
+      font-size: 2rem;
+    }
+
+    @include breakpoint(for-medium-desktop-up) {
       font-size: 3.1rem;
-      line-height: 1.32;
-      font-weight: normal;
     }
   }
 }
@@ -30,5 +72,12 @@
     width: 100%;
     height: auto;
     display: block;
+  }
+}
+
+.search .header-visual,
+.archive .header-visual {
+  @include breakpoint(for-phone-only) {
+    margin-bottom: 60px;
   }
 }

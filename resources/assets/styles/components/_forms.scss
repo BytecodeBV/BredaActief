@@ -1,6 +1,6 @@
 *:focus {
-  outline: none;
-}
+   outline: none;
+ }
 
 label {
   font-size: 3.1rem;
@@ -94,7 +94,9 @@ input[type="submit"] {
     color: $blue;
     border-radius: $border-radius;
     margin: 0 10px 0 40px;
-    padding: 5px 15px;
+    padding: 0 15px;
+    line-height: 36px;
+    height: 36px;
 
     @include breakpoint(for-phone-only) {
       border-color: $red;
@@ -109,7 +111,7 @@ input[type="submit"] {
   }
 
   .search-submit {
-    background: url('../../../assets/images/icon_loop.svg') no-repeat;
+    background: url('../images/icon_loop.svg') no-repeat;
     width: 24px;
     height: 24px;
     border: none;
@@ -131,7 +133,7 @@ input[type="submit"] {
 
 .search-toggle {
   display: none;
-  
+
   @include breakpoint(for-phone-only) {
     display: block;
   }
@@ -143,5 +145,43 @@ input[type="submit"] {
   }
 }
 
+#search-form-news {
+  visibility: visible;
+  opacity: 1;
+  background: transparent;
 
+  @include breakpoint(for-phone-only) {
+    position: static;
+  }
 
+  .search-form__inner {
+    width: 100%;
+    left: 0;
+  }
+
+  .search-field {
+    border-color: $blue;
+  }
+
+  .search-submit {
+    opacity: 1;
+    visibility: visible;
+    background: url('../images/icon_loop_white.svg') no-repeat;
+
+    @include breakpoint(for-phone-only) {
+      background: url('../images/icon_loop.svg') no-repeat;
+    }
+  }
+}
+
+.wpcf7-not-valid,
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  border: 2px solid $red !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+span.wpcf7-not-valid-tip {
+  display: none;
+}

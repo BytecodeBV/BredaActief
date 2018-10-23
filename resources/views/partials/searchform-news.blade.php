@@ -1,8 +1,13 @@
 @php
-$action = '/';
-$name = 's';
-$id = 'search-form';
-$value = get_search_query();
+$action = get_permalink( get_option( 'page_for_posts' ));
+$name = 's_news';
+$id = 'search-form-news';
+
+if( isset($_GET['s_news']) && $_GET['s_news'] !== '') {
+	$value = $_GET['s_news'];
+} else {
+	$value = '';
+}
 @endphp
 
 <form id="{{ $id }}" role="search" method="get" class="search-form" action="{{ $action }}">

@@ -1,18 +1,18 @@
-.contact {
+.section-contact {
   position: relative;
 
   * {
     color: $blue;
   }
 
-  &__col--left {
+  .contact__col--left {
     @include breakpoint(for-tablet-landscape-up) {
       width: 100%;
       padding: 100px 42.8% 100px 0;
     }
   }
 
-  &__col--right {
+  .contact__col--right {
     min-height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,26 +32,43 @@
     }
   }
 
-  &__article {
+  .contact__article {
     width: 90%;
-    max-width: 960px;
-    text-align: center;
+    max-width: 640px;
     margin: 0 auto;
     padding: 60px 0;
+
+    @include breakpoint(for-desktop-up) {
+      padding: 60px;
+    }
+
+    * {
+      color: inherit !important;
+    }
+
   }
 
-  &__header {
-    margin-bottom: 70px;
+  .contact__header {
+    margin-bottom: 40px;
   }
 
-  &__header--title {
+  .contact__header--title {
     @include title;
 
-    margin: 0;
+    margin: 0 0 20px;
+    text-align: center;
   }
 
-  &__header--subtitle {
-    font-size: 3.1rem;
+  .contact__header--subtitle {
+    font-size: 2.3rem;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 2.7rem;
+    }
+
+    @include breakpoint(for-medium-desktop-up) {
+      font-size: 3.1rem;
+    }
   }
 
   form {
@@ -61,6 +78,15 @@
 
   label {
     margin: 0;
+    font-size: 2.3rem;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      font-size: 2.8rem;
+    }
+
+    @include breakpoint(for-medium-desktop-up) {
+      font-size: 3.1rem;
+    }
   }
 
   .field-wrapper {
@@ -83,15 +109,6 @@
     }
   }
 
-
-
-  .field-textarea,
-  .field-submit {
-
-
-
-  }
-
   .field-textarea {
     textarea {
       height: 150px;
@@ -100,7 +117,314 @@
 
   .field-submit {
     input[type="submit"] {
+      padding: 0 40px 0 0;
+      background-image: url('../images/arrow_right_blue.svg');
+      background-repeat: no-repeat;
+      background-size: 22px 22px;
+      background-position: 95% center;
+      transition: all 0.3s linear;
+
+      &:hover {
+        background-position: 100% center;
+      }
+    }
+  }
+
+  &.reverse {
+    .contact__col--left {
+      @include breakpoint(for-tablet-landscape-up) {
+        padding-right: 0;
+        padding-left: 42.8%;
+      }
+    }
+
+    .contact__col--right {
+      @include breakpoint(for-tablet-landscape-up) {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
+
+.contact {
+  .intro {
+    text-align: center;
+
+    @include breakpoint(for-tablet-landscape-up) {
+      text-align: left;
+    }
+
+    ul {
+      margin: 0;
       padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(for-tablet-landscape-up) {
+        flex-direction: row;
+      }
+
+      li {
+        margin-bottom: 20px;
+
+        @include breakpoint(for-tablet-landscape-up) {
+          flex: 1 1 255px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.employee__section {
+  padding: 100px 0 60px;
+  background: $blue;
+
+  .employee__header {
+    padding-left: 100px;
+
+    h2 {
+      color: $white;
+    }
+  }
+
+  .employee__wrapper {
+    .center {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      margin-bottom: 60px;
+
+      @include breakpoint(for-tablet-portrait-up) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      @include breakpoint(for-tablet-landscape-up) {
+        justify-content: flex-start;
+      }
+    }
+
+    .employee {
+      width: 100%;
+      border-radius:  $border-radius;
+      margin-bottom: 40px;
+
+      @include breakpoint(for-tablet-portrait-up) {
+        width: 47.5%;
+      }
+
+      @include breakpoint(for-tablet-landscape-up) {
+        width: 31.1%;
+        margin-right: 3.33%;
+      }
+
+      @include breakpoint(for-desktop-up) {
+        width: 22%;
+        margin-right: 4%;
+      }
+
+      @include breakpoint(for-medium-desktop-up) {
+        width: 17.14%;
+        margin-right: 3.57%;
+      }
+
+      * {
+        color: $white;
+      }
+
+      &:nth-child(2n) {
+        @include breakpoint(for-tablet-landscape-up) {
+          margin-right: 3.33%;
+        }
+
+        @include breakpoint(for-desktop-up) {
+          margin-right: 4%;
+        }
+
+        @include breakpoint(for-medium-desktop-up) {
+          margin-right: 3.57%;
+        }
+      }
+
+      &:nth-child(3n) {
+        @include breakpoint(for-tablet-landscape-up) {
+          margin-right: 0;
+        }
+
+        @include breakpoint(for-desktop-up) {
+          margin-right: 4%;
+        }
+
+        @include breakpoint(for-medium-desktop-up) {
+          margin-right: 3.57%;
+        }
+      }
+
+      &:nth-child(4n) {
+        @include breakpoint(for-tablet-landscape-up) {
+          margin-right: 3.33%;
+        }
+
+        @include breakpoint(for-desktop-up) {
+          margin-right: 0;
+        }
+
+        @include breakpoint(for-medium-desktop-up) {
+          margin-right: 3.57%;
+        }
+      }
+
+      &:nth-child(5n) {
+        @include breakpoint(for-tablet-landscape-up) {
+          margin-right: 3.33%;
+        }
+
+        @include breakpoint(for-desktop-up) {
+          margin-right: 4%;
+        }
+
+        @include breakpoint(for-medium-desktop-up) {
+          margin-right: 0;
+        }
+      }
+
+      &__photo {
+        margin: 0;
+
+        img {
+          @include image;
+        }
+      }
+
+      &__slide {
+        padding: 15px 18px;
+        background: $red;
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+        cursor: pointer;
+        transition: background 0.5s linear;
+
+        &:hover {
+          background: lighten($red, 3%);
+        }
+      }
+
+      &__info {
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          width: 13px;
+          height: 11px;
+          background-image: url('../images/arrow_down.svg');
+          background-size: 13px 11px;
+          background-repeat: no-repeat;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      &__info--name {
+        margin: 0;
+        font-size: 2.09rem;
+        font-family: $serif;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      &__info--job {
+        font-style: italic;
+        font-size: 1.6rem;
+        margin: 0;
+      }
+
+      &__quote {
+        margin-top: 12px;
+        padding: 15px 0;
+        font-size: 1.5rem;
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      &__contact {
+        padding: 15px 0;
+        font-size: 1.5rem;
+
+        &--phone {
+          margin: 0;
+        }
+
+        &--social {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          text-align: center;
+
+          li {
+            display: inline-block;
+            margin: 0 2.5px;
+
+            svg {
+              width: 30px;
+              height: 30px;
+              display: block;
+
+              circle,
+              path {
+                transition: fill 0.3s ease;
+              }
+
+              .cls-1,
+              circle {
+                fill: $blue;
+              }
+
+              .cls-2,
+              path {
+                fill: $white;
+              }
+            }
+
+            &:hover {
+              svg {
+                .cls-1,
+                circle {
+                  fill: $white;
+                }
+
+                .cls-2,
+                path {
+                  fill: $blue;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__slide--out {
+        display: none;
+      }
+
+      &__slide {
+        &.open {
+          .employee__info {
+            &::after {
+              background-image: url('../images/icon_close.svg');
+            }
+          }
+        }
+      }
     }
   }
 }
