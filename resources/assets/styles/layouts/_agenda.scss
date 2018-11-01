@@ -110,14 +110,10 @@
 
 .slider {
   position: relative;
-  margin-bottom: 130px;
+  margin: 0 -20px 130px -20px;
 
   .slick-slide {
-    padding: 0 20px;
-
-    @include breakpoint(for-phone-only) {
-      padding: 0 5px;
-    }
+    margin: 0 20px;
   }
 }
 
