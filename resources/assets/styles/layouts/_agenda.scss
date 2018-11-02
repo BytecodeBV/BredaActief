@@ -60,13 +60,13 @@
     @include title;
 
     font-family: $serif;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     color: $white;
     margin-bottom: 0;
-    text-shadow: 5px 2px 4px rgba(150, 150, 150, 1);
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.54);
 
-    @include breakpoint(for-tablet-portrait-up) {
-      font-size: 3.0rem;
+    @include breakpoint(for-desktop-up) {
+      font-size: 2.8rem;
     }
   }
 
@@ -75,6 +75,7 @@
     line-height: 1.2;
     font-family: 'Karla', sans-serif;
     margin-bottom: 0;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.54);
   }
 
   &--text {
@@ -87,10 +88,6 @@
     margin: 0;
     overflow: hidden;
     border-radius: $border-radius;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
 
     img {
       transition: all 0.5s linear;

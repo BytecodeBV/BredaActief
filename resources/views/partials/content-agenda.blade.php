@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="center">
-			<a class="show__all" href="#">{!! __('Bekijk alles', $text_domain) !!}</a>
+			<a class="show__all" href="/agenda">{!! __('Bekijk alles', $text_domain) !!}</a>
 		</div>
 	</section>
 	@php wp_reset_postdata() @endphp

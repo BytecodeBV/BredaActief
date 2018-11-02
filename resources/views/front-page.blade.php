@@ -67,7 +67,7 @@
 					@endwhile
 				
 				</div>
-				<a class="show__all" href="#">{!! __('Bekijk alles', $text_domain) !!}</a>
+				<a class="show__all" href="/nieuws">{!! __('Bekijk alles', $text_domain) !!}</a>
 			</div>
 		</section>
 		@php(wp_reset_postdata())
