@@ -41,9 +41,8 @@ export default {
       dots: false,
       infinite: true,
       speed: 300,
-      slidesToShow: 5,
+      slidesToShow: 4,
       slidesToScroll: 1,
-      centerMode: true,
       responsive: [
         {
           breakpoint: 1700,
