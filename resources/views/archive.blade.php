@@ -85,7 +85,7 @@
 						@php(setup_postdata($post))
 						<div class="more__block--excerpt">
 							<p>{!! wp_trim_words( get_the_content(), 20, '...' ) !!}</p>
-							<p class="group"><a class="show__all more__block--link right" href="{{ the_permalink() }}">{!! __('Meer informatie', $text_domain ) !!}</a></p>
+							<p class="group"><a class="show__all more__block--link right" href="{!! get_the_permalink($post->ID) !!}">{!! __('Meer informatie', $text_domain ) !!}</a></p>
 						</div>
 						@php(wp_reset_postdata())
 					@endif
