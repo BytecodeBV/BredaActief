@@ -46,19 +46,17 @@
   }
 
   &__header {
-    margin-left: 100px;
-
     @include breakpoint(for-phone-only) {
       margin-left: 0;
       text-align: center;
     }
 
-    @include breakpoint(for-tablet-landscape-up) {
-      margin-left: 130px;
+    @include breakpoint(for-tablet-portrait-up) {
+      margin-left: 100px;
     }
 
-    @include breakpoint(for-desktop-up ) {
-      margin-left: 150px;
+    @include breakpoint(for-desktop-up) {
+      margin-left: 0;
     }
 
     h2 {

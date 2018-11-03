@@ -43,31 +43,32 @@
 	
 	@if( $news->have_posts())
 		<section class="news">
-			<div class="center">
-				<header class="news__header">
+			
+			<header class="news__header">
+				<div class="center center-small">
 					<h2>{!! __('Nieuws', $text_domain) !!}</h2>
-				</header>
-				<div class="news__item-wrapper">
-					
-					@while( $news->have_posts()) @php($news->the_post())
-					
-						@php($trimmed = wp_trim_words( get_the_content(), 23, '...' ))
-						@php($post_thumb_id = get_post_thumbnail_id())
-						@php($post_thumb = wp_get_attachment_image($post_thumb_id, 'image-feat'))
-						
-						<article class="news__item">
-							<a href="{{ the_permalink() }}">
-								<figure class="news__item--img">{!! $post_thumb !!} </figure>
-								<div class="news__item--text">
-									<h3 class="news__item--title">{{ the_title() }}</h3>
-									<p class="news__item--intro">{{ $trimmed }}</p>
-								</div>
-							</a>
-						</article>
-					@endwhile
-				
 				</div>
+			</header>
+			<div class="news__item-wrapper center">
+				
+				@while( $news->have_posts()) @php($news->the_post())
+				
+				@php($trimmed = wp_trim_words( get_the_content(), 23, '...' ))
+				@php($post_thumb_id = get_post_thumbnail_id())
+				@php($post_thumb = wp_get_attachment_image($post_thumb_id, 'image-feat'))
+				
+				<article class="news__item">
+					<a href="{{ the_permalink() }}">
+						<figure class="news__item--img">{!! $post_thumb !!} </figure>
+						<div class="news__item--text">
+							<h3 class="news__item--title">{{ the_title() }}</h3>
+							<p class="news__item--intro">{{ $trimmed }}</p>
+						</div>
+					</a>
+				</article>
+				@endwhile
 				<a class="show__all" href="/nieuws">{!! __('Bekijk alles', $text_domain) !!}</a>
+			
 			</div>
 		</section>
 		@php(wp_reset_postdata())
