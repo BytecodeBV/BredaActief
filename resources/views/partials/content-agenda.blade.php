@@ -24,7 +24,7 @@
 @if( $events->have_posts())
 	<section class="agenda">
 		<header class="agenda__header">
-			<div class="center">
+			<div class="center center-small">
 				<h2>{!! __('Agenda', $text_domain) !!}</h2>
 			</div>
 		</header>
