@@ -29,6 +29,8 @@
 		$args = array(
 			'post_type' => 'employee',
 			'posts_per_page' => -1,
+			'orderby' => 'title',
+			'order' => 'ASC'
 		);
 		
 		$employee_query = new WP_Query($args);
