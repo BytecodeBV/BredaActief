@@ -101,7 +101,7 @@ $text_domain = 'breda-actief';
 /**
  * Image sizes
  */
-add_image_size('image-header', 1920, 1300, true);
+add_image_size('image-header', 1920, 1100, true);
 add_image_size('image-banner', 1920, 713, true);
 add_image_size('image-banner-m', 1280, 475, true);
 add_image_size('image-banner-s', 600, 223, true);
