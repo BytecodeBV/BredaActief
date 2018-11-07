@@ -75,11 +75,6 @@
 									<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
 									<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
 									<ul class="employee__contact--social">
-										
-										@if(!empty($email))
-											<li class="mail"><a href="{{ $email }}" target="_blank">{!! file_get_contents(get_template_directory_uri() . '/assets/images/icon_mail.svg') !!}</a></li>
-										@endif
-										
 										@if(!empty($facebook))
 											<li class="facebook"><a href="{{ $facebook }}" target="_blank">{!! file_get_contents(get_template_directory_uri() . '/assets/images/icon_fb.svg') !!}</a></li>
 										@endif
