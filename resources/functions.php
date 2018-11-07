@@ -101,7 +101,7 @@ $text_domain = 'breda-actief';
 /**
  * Image sizes
  */
-add_image_size('image-header', 1920, 1300, true);
+add_image_size('image-header', 1920, 1100, true);
 add_image_size('image-banner', 1920, 713, true);
 add_image_size('image-banner-m', 1280, 475, true);
 add_image_size('image-banner-s', 600, 223, true);
@@ -318,3 +318,25 @@ function breda_actief_cpts() {
 }
 
 add_action( 'init', 'breda_actief_cpts' );
+
+
+function add_current_nav_class($classes, $item) {
+	// Getting the current post details
+	global $post;
+	
+	// Getting the post type of the current post
+	$current_post_type = get_post_type_object(get_post_type($post->ID));
+	$current_post_type_slug = $current_post_type->rewrite['slug'];
+	
+	// Getting the URL of the menu item
+	$menu_slug = strtolower(trim($item->url));
+	
+	// If the menu item URL contains the current post types slug add the current-menu-item class
+	if (strpos($menu_slug,$current_post_type_slug) !== false) {
+		$classes[] = 'current-menu-item';
+	}
+	
+	// Return the corrected set of classes to be added to the menu item
+	return $classes;
+}
+add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
