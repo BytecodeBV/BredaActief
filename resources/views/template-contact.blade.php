@@ -81,7 +81,7 @@
 										
 										@if(!empty($linkedin))
 											<li class="linkedin"><a href="{{ $linkedin }}" target="_blank">{!! file_get_contents(get_template_directory_uri() . '/assets/images/icon_linkedin.svg') !!}</a></li>
-										@endif;
+										@endif
 										
 									</ul>
 								</div>
