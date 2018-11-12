@@ -136,7 +136,7 @@ export default {
      * Scroll to hash
      */
 
-    $(document).on('click', 'a[href^="#"]', function (event) {
+    $('.header-visual').on('click', 'a[href^="#"]', function (event) {
       event.preventDefault();
 
       $('html, body').animate({
