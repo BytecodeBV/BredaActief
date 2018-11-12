@@ -1,9 +1,13 @@
 .tabs {
   width: 100%;
   display: inline-block;
+  background-color: $blue;
+  padding: 100px;
 }
 
 .tab-links {
+  text-align: center;
+
   &::after {
     display: block;
     clear: both;
@@ -11,38 +15,35 @@
   }
 
   li {
-    margin: 0 5px;
-    float: left;
+    margin: 0 50px;
+    display: inline-block;
     list-style: none;
   }
 
   a {
     padding: 9px 15px;
     display: inline-block;
-    border-radius: 3px 3px 0 0;
-    background: #7fb5da;
-    font-size: 16px;
-    font-weight: 600;
-    color: #4c4c4c;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: $sans-serif;
+    color: $white;
     transition: all linear 0.15s;
 
     &:hover {
-      background: #a7cce5;
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 
   li.active a,
   li.active a:hover {
-    background: #fff;
-    color: #4c4c4c;
+    transform: scale(1.3);
+    text-decoration: underline;
   }
 }
 
 .tab-content {
   padding: 15px;
-  border-radius: 13px;
-  background: #fff;
+  color: $white;
 }
 
 .tab {
