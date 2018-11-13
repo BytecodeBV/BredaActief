@@ -12,12 +12,15 @@
 	@include('partials.header-visual')
 	@while(have_posts()) @php the_post() @endphp
 	
+	@include('partials.content-intro')
+	
 	@if(have_rows('blocks'))
 		<section class="blocks">
 			@while (have_rows('blocks')) @php(the_row())
 			
 			@php($block_type = get_sub_field('block_type'))
-			@php($block_img = get_sub_field('block_image'))
+			@php($block_img_id = get_sub_field('block_image'))
+			@php($block_img_url = wp_get_attachment_image_url( $block_img_id, 'image-square-block' ))
 			@php($block_bg_color = get_sub_field('block_bg_color'))
 			@php($block_text_color = get_sub_field('block_text_color'))
 			@php($block_subtitle = get_sub_field('block_subtitle'))
@@ -48,38 +51,41 @@
 			@endif
 			
 			@if($block_type == 'block_img')
-				<article class="block block__type--img">
-					<figure class="block__figure"><img class="block__image" src="http://placehold.it/1000x1000" alt=""></figure>
+				<article class="block block__type--img" style="background-image:url('{{ $block_img_url }}');">
 				</article>
 			@endif
 			
 			@endwhile
 		</section>
 		
-		<section class="tabs">
-			<div class="center center-small">
-				<ul class="tab-links">
-					<li class="active"><a href="#tab1">Missie</a></li>
-					<li><a href="#tab2">Visie</a></li>
-					<li><a href="#tab3">Ambitie</a></li>
-				</ul>
-				
-				<div class="tab-content">
-					<div id="tab1" class="tab active">
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.</p>
-					</div>
+		@php($tabs = get_field('tab'))
+		
+		@if($tabs)
+			<section class="tabs">
+				<div class="center center-small">
+
+					<ul class="tab-links">
+						@php( $i = 1 )
+						@foreach($tabs as $tab)
+							<li class="@if($i == 1) {{'active'}} @endif"><a href="#tab{{$i}}">{{ $tab['tab_title'] }}</a></li>
+							@php( $i++ )
+						@endforeach
+					</ul>
 					
-					<div id="tab2" class="tab">
-						<p>Breda Actief wil de spil zijn binnen sport en vrijwilligerswerk in Breda. Breda Actief inspireert, stimuleert, adviseert en faciliteert alle inwoners en organisaties tot deelname aan en ontwikkeling van sport en vrijwilligerswerk. Dit doen we door vraag en aanbod te verbinden, door te adviseren over mogelijkheden, door proactief in te spelen op ontwikkelingen en kansen, door activiteiten en ontmoetingen te organiseren en te faciliteren, en door cursussen en workshops te geven, door op te leiden en te begeleiden.</p>
-					</div>
+					<div class="tab-content">
+						
+						@php( $i = 1 )
+						@foreach($tabs as $tab)
+							<div id="tab{{$i}}" class="tab @if($i == 1) {{'active'}} @endif">
+								{!! $tab['tab_content'] !!}
+							</div>
+							@php( $i++ )
+						@endforeach
 					
-					<div id="tab3" class="tab">
-						<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
 					</div>
-				
 				</div>
-			</div>
-		</section>
+			</section>
+		@endif
 	@endif
 	
 	@endwhile
