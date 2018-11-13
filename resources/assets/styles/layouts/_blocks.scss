@@ -1,12 +1,22 @@
 .blocks {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
 
+  @include breakpoint(for-tablet-landscape-up) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
   .block {
-    flex: 0 0 50%;
-    position: relative;
-    max-width: 50%;
+    width: 100%;
+    min-height: 500px;
+
+    @include breakpoint(for-tablet-landscape-up) {
+      max-width: 50%;
+      flex: 0 0 50%;
+      position: relative;
+      min-height: 0;
+    }
   }
 
   .block__figure {
@@ -34,20 +44,36 @@
 
   .block__type--text {
     .block__content {
-      position: absolute;
-      width: 100%;
-      height: 100%;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
       flex-direction: column;
-      padding: 15%;
+      padding: 10%;
+
+      @include breakpoint(for-desktop-up) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include breakpoint(for-big-desktop-up) {
+        position: relative;
+        padding: 15%;
+      }
     }
 
     &::after {
-      content: '';
-      display: block;
-      padding-bottom: 100%;
+      display: none;
+
+      @include breakpoint(for-desktop-up) {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      @include breakpoint(for-big-desktop-up) {
+        display: none;
+      }
     }
 
     .block__subtitle {
@@ -69,8 +95,14 @@
 
     .block__header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       margin: 0 0 30px;
+      flex-direction: column;
+
+      @include breakpoint(for-tablet-portrait-up) {
+        flex-direction: row;
+        align-items: center;
+      }
 
       &--title {
         margin: 0;
@@ -93,7 +125,12 @@
     }
 
     .block__figure {
-      flex: 0 0 115px;
+      margin-bottom: 30px;
+
+      @include breakpoint(for-tablet-portrait-up) {
+        flex: 0 0 115px;
+        margin-bottom: 0;
+      }
 
       .block__image {
         border-radius: 50%;
@@ -105,6 +142,9 @@
   }
 
   .block__type--img {
+    background-size: cover;
+    background-position: center center;
+
     .block__figure {
       width: 100%;
 
