@@ -51,7 +51,7 @@
 			@endif
 			
 			@if($block_type == 'block_img')
-				<article class="block block__type--img" style="background-image:url('{{ $block_img_url }}');">
+				<article class="block block__type--img" style="background-image:url('{!! $block_img_url !!}');">
 				</article>
 			@endif
 			
