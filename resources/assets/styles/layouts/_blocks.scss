@@ -83,6 +83,7 @@
       font-family: $sans-serif;
       font-weight: bold;
       margin: 0 0 30px;
+      word-break: break-word;
 
       @include breakpoint(for-desktop-up) {
         font-size: 4.2rem;
