@@ -113,6 +113,7 @@ add_image_size('image-content-banner', 1920, 630, true);
 add_image_size('image-content-banner-m', 1400, 460, true);
 add_image_size('image-content-banner-s', 600, 200, true);
 add_image_size('image-square', 200, 200, true);
+add_image_size('image-square-block', 1000, 1000, true);
 
 /**
  * Add excerpts to pages
