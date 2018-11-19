@@ -114,6 +114,7 @@ add_image_size('image-content-banner-m', 1400, 460, true);
 add_image_size('image-content-banner-s', 600, 200, true);
 add_image_size('image-square', 200, 200, true);
 add_image_size('image-square-block', 1000, 1000, true);
+add_image_size('image-logo', 180, 80, true);
 
 /**
  * Add excerpts to pages
@@ -320,3 +321,11 @@ function breda_actief_cpts() {
 }
 
 add_action( 'init', 'breda_actief_cpts' );
+
+// Add site-id class to body
+function multisite_body_classes($classes) {
+	$id = get_current_blog_id();
+	$classes[] = 'site-id-'.$id;
+	return $classes;
+}
+add_filter('body_class', 'multisite_body_classes');
