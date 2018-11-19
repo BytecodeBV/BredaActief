@@ -22,7 +22,6 @@
 }
 
 // end sticky footer
-
 .footer {
   padding: 60px 0;
   background: $red;
@@ -35,18 +34,20 @@
     color: $white;
   }
 
-  .center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .footer-sitemap {
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
 
-    @include breakpoint(for-tablet-portrait-up) {
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
+      @include breakpoint(for-tablet-portrait-up) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+      }
     }
   }
 
