@@ -1,0 +1,49 @@
+.site-id-2 {
+  .header-visual {
+    display: none;
+  }
+
+  .main {
+    &::before {
+      display: none;
+    }
+  }
+
+  .nav-top__menu {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .banner {
+    .logo {
+      font-family: $sans-serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: $red;
+      top: 80px;
+      bottom: auto;
+
+      @include breakpoint(for-tablet-portrait-up) {
+        font-size: 2rem;
+        top: 81px;
+      }
+
+      @include breakpoint(for-desktop-up) {
+        font-size: 2.69rem;
+        top: 76px;
+      }
+    }
+  }
+
+  .nav-primary {
+    .menu-item {
+      font-family: $sans-serif;
+      text-transform: uppercase;
+      font-size: 1.854rem;
+    }
+  }
+
+  .footer {
+    background: $white;
+  }
+}
