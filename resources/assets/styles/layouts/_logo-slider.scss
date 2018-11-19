@@ -1,0 +1,19 @@
+.logo__slider-wrapper {
+  .center {
+    .logo__slider {
+      margin: 0 -20px;
+    }
+
+    .slick-slide {
+      margin: 0 20px;
+    }
+
+    .logo_slide {
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
