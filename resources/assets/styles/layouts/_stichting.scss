@@ -43,7 +43,16 @@
     }
   }
 
+  .intro {
+    margin-top: 60px;
+
+    @include breakpoint(for-desktop-up) {
+      margin-top: 100px;
+    }
+  }
+
   .footer {
+    padding: 45px 0 40px;
     background: $white;
   }
 }
