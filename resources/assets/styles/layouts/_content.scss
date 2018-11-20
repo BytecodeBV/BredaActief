@@ -111,6 +111,14 @@
   }
 
   .footer {
-    border-top: 150px solid $blue;
+    border-top: 60px solid $blue;
+
+    @include breakpoint(for-tablet-portrait-up) {
+      border-top: 100px solid $blue;
+    }
+
+    @include breakpoint(for-desktop-up) {
+      border-top: 150px solid $blue;
+    }
   }
 }
