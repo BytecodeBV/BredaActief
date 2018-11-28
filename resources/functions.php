@@ -350,3 +350,4 @@ function add_current_nav_class($classes, $item) {
 	return $classes;
 }
 add_action('nav_menu_css_class', 'add_current_nav_class', 10, 2 );
+
