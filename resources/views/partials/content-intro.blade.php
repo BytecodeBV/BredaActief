@@ -1,3 +1,8 @@
+@php
+$content = get_the_content();
+@endphp
+
+@if(!empty($content))
 <section id="scroll-to" class="intro">
 	<div class="center center-small">
 		<article id="post-{{ get_the_ID() }}" class="page-article">
@@ -7,3 +12,4 @@
 		</article>
 	</div>
 </section>
+@endif

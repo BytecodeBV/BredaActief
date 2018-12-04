@@ -43,6 +43,14 @@
       </nav>
     </div>
   </nav>
-  <a class="logo" href="/">{!! file_get_contents(get_template_directory_uri() . '/assets/images/logo.svg') !!}</a>
+  
+  <a class="logo" href="/">
+  @if(get_current_blog_id() === 2)
+    @php(_e('Stichting Breda Actief'))
+  @else
+    {!! file_get_contents(get_template_directory_uri() . '/assets/images/logo.svg') !!}
+  @endif
+  </a>
+  
 </header>
 
