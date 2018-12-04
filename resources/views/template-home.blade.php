@@ -1,3 +1,7 @@
+{{--
+Template Name: Home
+--}}
+
 @php
 	global $text_domain;
 	$page_id = get_the_ID();

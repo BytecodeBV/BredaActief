@@ -34,6 +34,50 @@ export default {
     });
 
     /**
+     * Footer Logo Slider
+     */
+
+    $('.logo__slider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            arrows: false
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+
+    /**
      * Agenda slider
      */
 
@@ -136,7 +180,7 @@ export default {
      * Scroll to hash
      */
 
-    $(document).on('click', 'a[href^="#"]', function (event) {
+    $('.header-visual').on('click', 'a[href^="#"]', function (event) {
       event.preventDefault();
 
       $('html, body').animate({
@@ -173,5 +217,23 @@ export default {
         $(this).parents('.employee__slide').toggleClass('open');
       });
     });
+
+    /**
+     * Tabs
+     */
+
+    $('.tabs .tab-links a').on('click', function(e) {
+      var currentAttrValue = jQuery(this).attr('href');
+
+      // Show/Hide Tabs
+      $('.tabs ' + currentAttrValue).show().siblings().hide();
+
+      // Change/remove current tab to active
+      $(this).parent('li').addClass('active').siblings().removeClass('active');
+
+      e.preventDefault();
+    });
+
+
   },
 };
