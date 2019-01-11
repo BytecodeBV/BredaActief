@@ -1,5 +1,6 @@
 @php
 $page_id = 'option';
+$show_block = get_field('show_contact_blok_option', $page_id);
 $contact_title = get_field('contact_title_option', $page_id);
 $contact_subtitle = get_field('contact_subtitle_option', $page_id);
 $contact_form = get_field('contact_form_option', $page_id);
@@ -10,6 +11,7 @@ $contact_text_color = get_field('contact_text_color_option',$page_id);
 $contact_reverse = get_field('contact_reverse_option', $page_id);
 @endphp
 
+@if($show_block[0] == 'show')
 <section class="section-contact {!! $contact_reverse[0] == 'reverse' ? 'reverse' : '' !!}" style="background: {!! $contact_bg !!}">
 	<div class="contact__col--left">
 		<article class="contact__article" style="color: {!! $contact_text_color !!}">
@@ -25,3 +27,4 @@ $contact_reverse = get_field('contact_reverse_option', $page_id);
 	<div class="contact__col--right" style="background-image:url('{!! $contact_image_url !!}');">
 	</div>
 </section>
+@endif
