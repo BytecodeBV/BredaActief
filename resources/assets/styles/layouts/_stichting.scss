@@ -55,6 +55,21 @@
     padding: 45px 0 40px;
     background: $white;
   }
+
+  .employee__section {
+    .employee__wrapper {
+      .employee {
+        @include breakpoint(for-desktop-up) {
+          margin-right: 3.33%;
+          width: 31.1%;
+        }
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }
 
 .site-id-2.template-contact {
