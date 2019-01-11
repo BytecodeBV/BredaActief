@@ -70,9 +70,12 @@
 								<p class="employee__info--job">{{ $job_title }}</p>
 							</div>
 							<div class="employee__slide--out">
+								@if(!empty(get_the_content()))
 								<div class="employee__quote">
 									{{ the_content() }}
 								</div>
+								@endif
+
 								<div class="employee__contact">
 									<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
 									<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
