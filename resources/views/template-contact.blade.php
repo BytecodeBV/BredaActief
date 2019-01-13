@@ -13,7 +13,8 @@
 @section('content')
 	@include('partials.header-visual')
 	@while(have_posts()) @php the_post() @endphp
-	
+
+	@if( !empty($contact_header) && !empty($contact_col_1) )
 	<section id="scroll-to" class="intro">
 		<div class="center center-small">
 			<article @php post_class() @endphp>
@@ -22,6 +23,7 @@
 			</article>
 		</div>
 	</section>
+	@endif
 	
 	@include('partials.content-contact')
 	
@@ -68,9 +70,12 @@
 								<p class="employee__info--job">{{ $job_title }}</p>
 							</div>
 							<div class="employee__slide--out">
+								@if(!empty(get_the_content()))
 								<div class="employee__quote">
 									{{ the_content() }}
 								</div>
+								@endif
+
 								<div class="employee__contact">
 									<p class="employee__contact--phone"><a href="tel:{{ $phone_number }}">{{ $phone }}</a></p>
 									<p class="employee__contact--email"><a href="mailto:{{$email}}">{{ $email }}</a></p>
