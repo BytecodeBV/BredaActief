@@ -22,12 +22,12 @@
 			'theme_location' => 'primary_navigation'
 		);
 		wp_nav_menu($args);
-		
+
 		$unique_id = esc_attr( uniqid( 'search-form-' ) );
       @endphp
-      
+
       @include('partials.searchform')
-      
+
       <a class="search-toggle" href="#">
 		  {!! file_get_contents( get_template_directory_uri() . '/assets/images/search_toggle.svg') !!}
       </a>
@@ -49,7 +49,7 @@
   @endphp
 
   <a class="logo" href="/">
-    @if($custom_body_class() === 'stichting')
+    @if($custom_body_class === 'stichting')
       @php(_e('Stichting Breda Actief'))
     @else
       {!! file_get_contents(get_template_directory_uri() . '/assets/images/logo.svg') !!}
@@ -57,4 +57,3 @@
   </a>
 
 </header>
-
