@@ -43,14 +43,18 @@
       </nav>
     </div>
   </nav>
-  
+
+  @php
+    $custom_body_class = get_field('custom_body_class', 'option');
+  @endphp
+
   <a class="logo" href="/">
-  @if(get_current_blog_id() === 2)
-    @php(_e('Stichting Breda Actief'))
-  @else
-    {!! file_get_contents(get_template_directory_uri() . '/assets/images/logo.svg') !!}
-  @endif
+    @if($custom_body_class() === 'stichting')
+      @php(_e('Stichting Breda Actief'))
+    @else
+      {!! file_get_contents(get_template_directory_uri() . '/assets/images/logo.svg') !!}
+    @endif
   </a>
-  
+
 </header>
 
