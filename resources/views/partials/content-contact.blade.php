@@ -5,7 +5,9 @@ $contact_title = get_field('contact_title', $page_id);
 $contact_subtitle = get_field('contact_subtitle', $page_id);
 $contact_form = get_field('contact_form', $page_id);
 $contact_image_id = get_field('contact_image', $page_id);
-$contact_image_url = wp_get_attachment_image_url($contact_image_id['ID'], 'image-half-block');
+if($contact_image_id) :
+	$contact_image_url = wp_get_attachment_image_url($contact_image_id['ID'], 'image-half-block');
+endif;
 $contact_bg = get_field('contact_bg', $page_id);
 $contact_text_color = get_field('contact_text_color',$page_id);
 $contact_reverse = get_field('contact_reverse', $page_id);
