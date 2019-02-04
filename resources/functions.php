@@ -322,14 +322,24 @@ function breda_actief_cpts() {
 
 add_action( 'init', 'breda_actief_cpts' );
 
-// Add site-id class to body
-function multisite_body_classes($classes) {
-	$id = get_current_blog_id();
-	$classes[] = 'site-id-'.$id;
+// Add custom body class
+function custom_body_classes($classes) {
+    $custom_body_class = get_field('custom_body_class', 'option');
+	$classes[] = $custom_body_class;
 	return $classes;
 }
-add_filter('body_class', 'multisite_body_classes');
+add_filter('body_class', 'custom_body_classes');
 
+// hide the custom body class from admin
+function hide_field_stichting( $field ) {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        return false;
+    }
+    return $field;
+}
+add_filter( 'acf/prepare_field/key=field_5c5897fe7d748', 'hide_field_stichting' );
+
+// add current menu item to post types within the menu
 function add_current_nav_class($classes, $item) {
 	// Getting the current post details
 	global $post;
