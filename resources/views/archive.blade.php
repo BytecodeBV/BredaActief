@@ -44,7 +44,7 @@
 				<div class="center group">
 					<div class="agenda__archive--month">
 					<span class="month-name">
-						@php($month = date('M', strtotime('+'.$i.' months')))
+						@php($month = date('M', strtotime('first day of +'.$i.' months')))
 						{!! $month !!}
 					</span>
 					</div>
